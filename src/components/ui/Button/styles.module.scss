@@ -1,0 +1,40 @@
+.button{
+    height: 3.8rem;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 1.8rem;
+    border: 0;
+    border-radius: 0.5rem;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.3rem;
+    color: #2b134b;
+    background: #00FF88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+
+    &[disabled]{
+        cursor: not-allowed;
+        svg{
+            animation: animate 2s infinite;
+        }
+    }
+
+    &:hover{
+        filter: brightness(1.08)
+    }
+}
+
+// .buttonText{
+//     color: #2b134b;
+// }
+
+@keyframes animate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

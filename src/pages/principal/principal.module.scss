@@ -1,0 +1,18 @@
+#__next {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#__next * {
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
