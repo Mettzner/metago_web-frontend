@@ -7,10 +7,10 @@
   box-sizing: border-box;
 }
 
-.mainCadUsuario{
+.container{
   width: 100vw;
   height: 100vh;
-  background: #201b2c;
+  background: var(--dark-1000);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,12 +33,12 @@
   align-items: center;
   flex-direction: column;
   padding: 30px 35px;
-  background: #2f2841;
+  background: var(--dark-500);
   border-radius: 20px;
-  box-shadow: 0px 10px 40px #00000056;
+  box-shadow: 0px 10px 40px var(--black);
 
     h1{
-      color: #00ff88;
+      color: var(--green-300);
       font-weight: 800;
       margin: 0;
     }
@@ -50,10 +50,10 @@
       border: none;
       border-radius: 10px;
       padding: 15px;
-      background: #514869;
-      color: #f0ffffde;
+      background: var(--dark-300);
+      color: var(--gray-50);
       font-size: 12pt;
-      box-shadow: 0px 10px 40px #00000056;
+      box-shadow: 8px 10px 80px -20px var(--black);
       outline: none;
       box-sizing: border-box;
     }

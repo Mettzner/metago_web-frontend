@@ -1,20 +1,18 @@
 import { useState, FormEvent, useContext } from 'react'
 import Head from 'next/head'
-import styles from '../../../styles/cadusuario.module.scss'
-import Image from 'next/image'
-import logoimg from '../../../public/logo.svg'
+import { Header } from '../../components/Header'
+import styles from './cliente.module.scss'
+import { setUpAPIClient } from '../../services/api'
+import { toast } from 'react-toastify'
+import { canSSRAuth } from '../../utils/canSSRAuth'
 import { Input } from '../../components/ui/Input'
 import { Button } from '../../components/ui/Button'
 import { AuthContext } from '../../contexts/AuthContext'
-import { toast } from 'react-toastify'
-import { canSSRAuth } from '../../utils/canSSRAuth'
-
-import { Header } from '../../components/Header'
-// import Link from 'next/link';
 
 
-export default function CadUsuario() {
-  const { cadUsuario } = useContext(AuthContext)
+export default function Cliente(){
+
+  const { cadCliente } = useContext(AuthContext)
 
   const [NOME, setNome] = useState('')
   const [USUARIO, setUsuario] = useState('')
@@ -45,14 +43,15 @@ export default function CadUsuario() {
     }
     console.log(data)
 
-  await cadUsuario(data)
+  await cadCliente(data)
 
   setLoading(false)
 
 }
 
-  return (
-    <>
+
+    return(
+        <>
     <Head>
     <title>
       Cadastro de Usuário - Metago
@@ -61,7 +60,6 @@ export default function CadUsuario() {
     <Header />
 
 <div className={styles.container}>
-      <Image src={logoimg} alt="logo sujeito pizzaria"/>
   <div className={styles.login}>
     <form onSubmit={handleCadUsuario}>
       <div className={styles.rightCadUsuario}>
@@ -108,8 +106,8 @@ export default function CadUsuario() {
     </form>
   </div>
 </div>
-    </>
-  )
+        </>
+    )
 }
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {

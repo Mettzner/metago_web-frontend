@@ -28,6 +28,12 @@ type CadUsuarioProps = {
     SENHA: string;
     NIVEL_ACESSO: string;
 }
+type CadClienteProps = {
+    NOME: string;
+    USUARIO: string;
+    SENHA: string;
+    NIVEL_ACESSO: string;
+}
 
 type AuthProviderProps = {
     children: ReactNode;
@@ -74,17 +80,17 @@ export function AuthProvider({ children }: AuthProviderProps) {
     async function signIn({ USUARIO, SENHA }: SignInProps){
         try {
             const response = await api.post('/sessao', {
+                //requisitos para realizar o acesso
                 USUARIO,
                 SENHA
             })
-            // console.log(response.data)
             const { CODIGO, NOME, token } = response.data
-
+                //está setando um cookie para gerenciar os acessos do usuário
             setCookie(undefined, '@nextauth.token', token, {
                 maxAge: 60 * 60 * 24 * 30, 
                 path: "/" //Quais caminhos terão acesso ao cookie
             })
-
+            //está inserido no cookie os dados do usuário que irão receber tratativas ao logar
             setUser({
                 CODIGO, 
                 NOME,
@@ -96,7 +102,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
             toast.success("Logado com sucesso")
 
-            //Redirecionar o usar para /dashboard
+            //Redirecionar o usar para /principal
             Router.push('/principal')
 
         } catch (err) {
@@ -124,8 +130,27 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
     }
 
+    async function cadCliente({ NOME, USUARIO, SENHA, NIVEL_ACESSO }: CadClienteProps){
+        try {
+            
+            const response = await api.post('/cliente', {
+                NOME,
+                USUARIO,
+                SENHA,
+                NIVEL_ACESSO
+            })
+
+            Router.push('/')
+
+            toast.success("Criado com sucesso")
+
+        } catch (err) {
+            toast.error("Erro ao cadastrar")
+        }
+    }
+
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, cadUsuario }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, cadUsuario, cadCliente }}>
             {children}
         </AuthContext.Provider>
     )

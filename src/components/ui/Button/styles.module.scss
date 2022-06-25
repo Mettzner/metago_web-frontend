@@ -9,10 +9,10 @@
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 0.3rem;
-    color: #2b134b;
-    background: #00FF88;
+    color: var(--dark-1000);
+    background: var(--green-300);
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-shadow: 0px 5px 40px -20px var(--green-300);
 
     &[disabled]{
         cursor: not-allowed;
@@ -25,10 +25,6 @@
         filter: brightness(1.08)
     }
 }
-
-// .buttonText{
-//     color: #2b134b;
-// }
 
 @keyframes animate {
     from{

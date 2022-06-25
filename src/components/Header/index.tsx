@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import styles from './styles.module.scss'
 import Link from 'next/link'
 import { FiLogOut } from 'react-icons/fi'
@@ -6,11 +6,35 @@ import { AuthContext } from '../../contexts/AuthContext'
 import * as IoIcons from "react-icons/io";
 import { IconContext } from "react-icons";
 import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
+import { useTheme } from 'next-themes'
+import { MoonIcon, SunIcon } from '@heroicons/react/solid' 
 
 
-export function Header () {
-  let [teste ,setTeste] = useState('')
+export function Header () {  
+  const { theme, setTheme } = useTheme()
+
+  const renderThemeChanger = () => {
+    const currentTheme = theme === 'dark' ?  'dark' : 'light';
+
+    if(currentTheme === 'dark') {
+      return(
+        <SunIcon 
+        className="w-7 h-7" 
+        role="button" 
+        onClick={() => setTheme('light')}
+        />
+      )
+    }
+    else {
+      return (
+        <MoonIcon 
+        className="w-7 h-7" 
+        role="button" 
+        onClick={() => setTheme('dark')} 
+        />
+      )
+    }
+  }
 
   const [sidebar, setSidebar] = useState(false);
   
@@ -21,6 +45,7 @@ export function Header () {
 
     return(
         <>
+        <form>
             <IconContext.Provider value={{ color: "#fff" }}>
                 <div className={styles.navBar}>
                     <div className={styles.menuBars}>
@@ -30,21 +55,29 @@ export function Header () {
                     </div>
                 </div>
 
-                <nav className={sidebar ? styles.navMenuActive : styles.navMenu}>
-                    <ul className={styles.navMenuItems} onClick={showSidebar}>
+                <nav className={sidebar ? styles.navMenuActive : styles.navMenu} onClick={showSidebar}>
+                    <ul className={styles.navMenuItems}>
                         <li className={styles.navbarToggle}>
                           <Link href="/principal">
                             <></>
                           </Link>
-                            <div className={styles.menuBarsClose}>
+                            {/* <div className={styles.menuBarsClose}>
                               <Link  href='#'>
                                   <a><AiIcons.AiOutlineClose /></a>
                               </Link>
-                            </div>
+                            </div> */}
                         </li>
+
+                        <div className={styles.groupText}>
+                              <div className={styles.ThemeIcon}>
+                                <button onClick={() => setTheme('light')}>Light Mode</button>
+                                <button onClick={() => setTheme('dark')}>Dark Mode</button> 
+                                {/* <a className={styles.SunIcon}><SunIcon onClick={() => setTheme('light')}></SunIcon></a>
+                                <a className={styles.MoonIcon}><MoonIcon onClick={() => setTheme('dark')}></MoonIcon></a> */}
+                              </div>
                             <div className={styles.navText}>
                               <IoIcons.IoMdPeople size={30} color="#FFF" />
-                              <Link href="/entidade">
+                              <Link href="/cliente">
                                   <a>Cadastro de Cliente</a>
                               </Link>
                             </div>
@@ -83,13 +116,15 @@ export function Header () {
                                   <a>Cardapio</a>
                                 </Link>
                             </div>
+                          </div>
 
                         <button onClick={signOut} className={styles.outButton}>
-                            <FiLogOut  size={30}/>
+                            <a><FiLogOut  size={30}/></a>
                         </button>
                     </ul>
                 </nav>
             </IconContext.Provider>
+            </form>
         </>
     )
 }
