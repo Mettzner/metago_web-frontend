@@ -1,13 +1,11 @@
 import { useState, FormEvent } from 'react'
-import * as FaIcons from "react-icons/fa";
-import * as BsIcons from "react-icons/bs";
 import Head from 'next/head'
 import { Header } from '../../components/Header'
-import styles from './cliente.module.scss'
+import styles from './cadservico.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
-import { Input20, Input80, Input50, Input100 } from '../../components/ui/Input'
+import { Input10, Input20, Input40, Input30, Input50, Input60, Input70, Input80, Input100 } from '../../components/ui/Input'
 import { Button40, ButtonDelete40, ButtonPesquisa } from '../../components/ui/Button'
 
 export default function CadMaquina(){
@@ -23,7 +21,7 @@ export default function CadMaquina(){
         }
 
         const apiClient = setUpAPIClient();
-        await apiClient.post('/cliente', {
+        await apiClient.post('/cadservico', {
             DESCRICAO: DESCRICAO
         })
 
@@ -34,92 +32,76 @@ export default function CadMaquina(){
     return(
         <>
         <Head>
-            <title>Novo Cliente - Metago</title>
+            <title>Novo Serviço - Metago</title>
         </Head>
             <Header />
     <div className={styles.container}>
         <form  onSubmit={handleRegister}>
             <div className={styles.rightCadMaquina}>
                 <div className={styles.cardCliente}>
-                <h1>Cadastro de Cliente</h1>
-                <div className={styles.elemento}>
-                    <Input100
-                    placeholder="Nome"
-                    type="text"
-                    value={DESCRICAO}
-                    onChange={ (e) => setDescricao(e.target.value)}
-                    />
-                    <ButtonPesquisa></ButtonPesquisa>
-                    <div className={styles.margin}>
-                        <Input50
-                        placeholder="CPF/CNPJ"
-                        type="text"
-                        value={DESCRICAO}
-                        onChange={ (e) => setDescricao(e.target.value)}
-                        />
-                        <Input50
-                        placeholder="Telefone"
-                        type="text"
-                        value={DESCRICAO}
-                        onChange={ (e) => setDescricao(e.target.value)}
-                        />
-                    </div>
-                        <Input100
-                        placeholder="Email"
-                        type="text"
-                        value={DESCRICAO}
-                        onChange={ (e) => setDescricao(e.target.value)}
-                        />
-                        <Input80
-                        placeholder="Endereço"
-                        type="text"
-                        value={DESCRICAO}
-                        onChange={ (e) => setDescricao(e.target.value)}
-                        />
-                        <Input20
-                        placeholder="CEP"
-                        type="text"
-                        value={DESCRICAO}
-                        onChange={ (e) => setDescricao(e.target.value)}
-                        />
+                <h1>Cadastro de Serviço</h1>
+                    <div className={styles.elemento}>
                         <div className={styles.margin}>
                             <Input20
-                            placeholder="Numero"
+                            placeholder="Cliente"
+                            type="text"
+                            value={DESCRICAO}
+                            onChange={ (e) => setDescricao(e.target.value)}
+                            />         
+                            <ButtonPesquisa></ButtonPesquisa>              
+                            <Input40
+                            placeholder=""
                             type="text"
                             value={DESCRICAO}
                             onChange={ (e) => setDescricao(e.target.value)}
                             />
                             <Input20
-                            placeholder="Bairro"
+                            placeholder="Funcionário"
                             type="text"
+                            value={DESCRICAO}
+                            onChange={ (e) => setDescricao(e.target.value)}
+                            />
+                            <ButtonPesquisa></ButtonPesquisa>
+                            <Input40
+                            placeholder=""
+                            type="text"
+                            disabled
                             value={DESCRICAO}
                             onChange={ (e) => setDescricao(e.target.value)}
                             />
                             <Input20
-                            placeholder="Cidade"
+                            placeholder="Produto"
                             type="text"
                             value={DESCRICAO}
                             onChange={ (e) => setDescricao(e.target.value)}
                             />
-                            <Input20
-                            placeholder="UF"
+                            <ButtonPesquisa></ButtonPesquisa>
+                            <Input70
+                            placeholder=""
                             type="text"
                             value={DESCRICAO}
                             onChange={ (e) => setDescricao(e.target.value)}
                             />
+                            <Input10
+                            placeholder="QTDE"
+                            type="text"
+                            value={DESCRICAO}
+                            onChange={ (e) => setDescricao(e.target.value)}
+                            />
+                            <Input50
+                            placeholder="Valor"
+                            type="text"
+                            value={DESCRICAO}
+                            onChange={ (e) => setDescricao(e.target.value)}
+                            />
+                            <Input50
+                            placeholder="Maquina"
+                            type="text"
+                            value={DESCRICAO}
+                            onChange={ (e) => setDescricao(e.target.value)}
+                            />
+                            <ButtonPesquisa></ButtonPesquisa>
                         </div>
-                        <Input80
-                        placeholder="Complemento"
-                        type="text"
-                        value={DESCRICAO}
-                        onChange={ (e) => setDescricao(e.target.value)}
-                        />
-                        <Input20
-                        placeholder="Pais"
-                        type="text"
-                        value={DESCRICAO}
-                        onChange={ (e) => setDescricao(e.target.value)}
-                        />
                     </div>
         
                     <div className={styles.elemento2}>

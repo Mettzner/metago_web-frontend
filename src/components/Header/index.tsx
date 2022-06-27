@@ -84,6 +84,13 @@ export function Header () {
 
                             <div className={styles.navText}>
                               <IoIcons.IoMdPeople size={30} color="#FFF" />
+                              <Link href="/cadservico">
+                                  <a>Cadastro de Serviços</a>
+                              </Link>
+                            </div>
+
+                            <div className={styles.navText}>
+                              <IoIcons.IoMdPeople size={30} color="#FFF" />
                               <Link href="/cadusuario">
                                   <a>Cadastro de Usuário</a>
                               </Link>
@@ -105,16 +112,16 @@ export function Header () {
 
                             <div className={styles.navText}>
                               <IoIcons.IoMdPeople size={30} color="#FFF" />
-                              <Link href="/category">
-                                  <a>Categoria</a>
-                              </Link>
+                                <Link href="/cadproduto">
+                                  <a>Cadastro de Produto</a>
+                                </Link>
                             </div>
 
                             <div className={styles.navText}>
                               <IoIcons.IoMdPeople size={30} color="#FFF" />
-                                <Link href="/product">
-                                  <a>Cardapio</a>
-                                </Link>
+                              <Link href="/category">
+                                  <a>Categoria</a>
+                              </Link>
                             </div>
                           </div>
 

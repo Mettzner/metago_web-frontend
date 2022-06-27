@@ -130,27 +130,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
     }
 
-    async function cadCliente({ NOME, USUARIO, SENHA, NIVEL_ACESSO }: CadClienteProps){
-        try {
-            
-            const response = await api.post('/cliente', {
-                NOME,
-                USUARIO,
-                SENHA,
-                NIVEL_ACESSO
-            })
-
-            Router.push('/')
-
-            toast.success("Criado com sucesso")
-
-        } catch (err) {
-            toast.error("Erro ao cadastrar")
-        }
-    }
 
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, cadUsuario, cadCliente }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, cadUsuario }}>
             {children}
         </AuthContext.Provider>
     )

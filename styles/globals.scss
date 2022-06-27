@@ -43,9 +43,16 @@
     --green-700: #00ff8052;
     --green-400: #00b661;
     --green-300: #3b3549;
+    --green-200: #45aa63;
     --green-100: #3fffb3;
-}
 
+    --red-400: #f02f2f;
+
+    --purple-600: #442E7E;
+
+    --dark-white: #09051bde;
+  }
+  
 [data-theme='dark'] {
     --white: #fff;
     --black: #000;
@@ -64,6 +71,11 @@
     --green-400: #00b661;
     --green-300: #00FF88;
     --green-100: #3fffb3;
+    --red-400: #FF2F2F;
+
+    --purple-600: #442E7E;
+
+    --dark-white: #8476ffde;
 }
 
 button{
