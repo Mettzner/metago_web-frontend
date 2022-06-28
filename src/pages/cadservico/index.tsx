@@ -47,7 +47,8 @@ export default function CadMaquina(){
                             type="text"
                             value={DESCRICAO}
                             onChange={ (e) => setDescricao(e.target.value)}
-                            />         
+                            />      
+                         
                             <ButtonPesquisa></ButtonPesquisa>              
                             <Input40
                             placeholder=""

@@ -26,7 +26,7 @@
 }
 
 .cardCadMaquina {
-    width: 45%;
+    width: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +41,22 @@
         font-weight: 800;
         margin: 0;
     }
+
+}
+
+.btnExcluir {
+    width: 80%;
+    margin-left: -1%;
+}
+
+.btnCadastrar {
+    width: 80%;
+    margin-right: -1%;
+}
+
+.margin {
+    margin-left: 2%;
+    margin-right: -2%;
 }
 
 .elemento2 {
@@ -51,18 +67,3 @@
     justify-content: center;
 }
 
-.btnExcluir {
-    width: 100%;
-    margin-left: -5%;
-}
-
-.btnCadastrar {
-    width: 100%;
-    margin-right: 5%;
-    margin-left: 3%;
-}
-
-.margin {
-    margin-left: 2%;
-    margin-right: -2%;
-}

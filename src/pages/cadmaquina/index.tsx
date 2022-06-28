@@ -43,7 +43,7 @@ export default function CadMaquina(){
                 <h1>Cadastro de Máquina</h1>
 
                     <Input
-                    placeholder="Nome"
+                    placeholder="Descrição"
                     type="text"
                     value={DESCRICAO}
                     onChange={ (e) => setDescricao(e.target.value)}

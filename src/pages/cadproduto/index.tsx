@@ -8,8 +8,9 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 import { Input, Input20, Input40, Input80 } from '../../components/ui/Input'
 import { ButtonPesquisa, ButtonDelete, Button } from '../../components/ui/Button'
 
-export default function CadMaquina(){
+export default function CadProduto(){
     const [DESCRICAO, setDescricao] = useState('')
+    const [PRECO, setPreco] = useState('')
     
   const [loading, setLoading] = useState(false)
 
@@ -18,14 +19,18 @@ export default function CadMaquina(){
 
         if(DESCRICAO === ""){
             return;
+        }       
+        if(PRECO === ""){
+            return;
         }
 
         const apiClient = setUpAPIClient();
         await apiClient.post('/cadproduto', {
-            DESCRICAO: DESCRICAO
+            DESCRICAO: DESCRICAO,
+            PRECO: PRECO
         })
 
-        toast.success(`Maquina ${DESCRICAO} cadastrada com sucesso`)
+        toast.success(`Produto ${DESCRICAO} cadastrado com sucesso`)
         setDescricao('');
     }
 
@@ -35,7 +40,6 @@ export default function CadMaquina(){
             <title>Novo Produto - Metago</title>
         </Head>
             <Header />
-<div>
     <div className={styles.container}>
         <form  onSubmit={handleRegister}>
             <div className={styles.rightCadMaquina}>
@@ -50,12 +54,13 @@ export default function CadMaquina(){
                             onChange={ (e) => setDescricao(e.target.value)}
                             />         
                             <ButtonPesquisa></ButtonPesquisa>              
-                            <Input80
+                            <Input40
                             placeholder=""
                             type="text"
-                            value={DESCRICAO}
-                            onChange={ (e) => setDescricao(e.target.value)}
+                            value={PRECO}
+                            onChange={ (e) => setPreco(e.target.value)}
                             />
+                            <Input/>
                         </div>
                     </div>
 
@@ -82,7 +87,6 @@ export default function CadMaquina(){
             </div>
         </form>
     </div>
-</div>
         </>
     )
 }
