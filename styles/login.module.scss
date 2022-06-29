@@ -1,48 +1,46 @@
 #__next {
-    margin: 0;
-    font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
 }
 
 #__next * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .mainLogin {
-    width: 100vw;
-    height: 100vh;
-    background: #201b2c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+  width: 100vw;
+  height: 100vh;
+  background: #201b2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .rightLogin {
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardLogin {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px 35px;
-    background: #2f2841;
-    border-radius: 20px;
-    box-shadow: 0px 10px 40px #00000056;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #2f2841;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
 
-    h1 {
-        color: #00ff88;
-        font-weight: 800;
-        margin: 0;
-    }
-
+  h1 {
+    color: #00ff88;
+    font-weight: 800;
+    margin: 0;
+  }
 }
 
 // .login{
@@ -78,22 +76,22 @@
 // }
 
 @media only screen and (max-width: 950px) {
-    .cardLogin {
-        width: 85%;
-    }
+  .cardLogin {
+    width: 85%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .mainLogin {
-        flex-direction: column;
-    }
+  .mainLogin {
+    flex-direction: column;
+  }
 
-    .rightLogin {
-        width: 100%;
-        height: auto;
-    }
+  .rightLogin {
+    width: 100%;
+    height: auto;
+  }
 
-    .cardLogin {
-        width: 90%;
-    }
+  .cardLogin {
+    width: 90%;
+  }
 }

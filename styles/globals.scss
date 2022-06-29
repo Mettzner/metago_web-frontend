@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   outline: 0;
@@ -7,7 +7,7 @@
 
 #__next {
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 #__next * {
@@ -24,90 +24,94 @@
   flex-direction: column;
 }
 
-:root{
-    --white: #fff;
-    --black: #000;
-  
-    --dark-1000: #69676e;
-    --dark-900: #525252;
-    --dark-800: #777777;
-    --dark-750: #282138;
-    --dark-700: #5f5f5f;
-    --dark-500: #999999;
-    --dark-400: #797979;
-    --dark-300: #b4b4b4;
-  
-    --gray-50: #000000de;
-    --gray-100: #8a8a8a;
-  
-    --green-700: #00ff8052;
-    --green-400: #00b661;
-    --green-300: #3b3549;
-    --green-200: #45aa63;
-    --green-100: #3fffb3;
+:root {
+  --white: #fff;
+  --black: #000;
 
-    --red-800: #8a1616;
-    --red-400: #f02f2f;
+  --dark-1000: #69676e;
+  --dark-900: #525252;
+  --dark-800: #777777;
+  --dark-750: #282138;
+  --dark-700: #5f5f5f;
+  --dark-500: #999999;
+  --dark-400: #797979;
+  --dark-300: #b4b4b4;
 
-    --blue-800: #3471cc;
+  --gray-50: #000000de;
+  --gray-100: #8a8a8a;
 
-    --purple-600: #442E7E;
+  --green-700: #00ff8052;
+  --green-400: #00b661;
+  --green-300: #3b3549;
+  --green-200: #45aa63;
+  --green-100: #3fffb3;
 
-    --dark-white: #09051bde;
-  }
-  
-[data-theme='dark'] {
-    --white: #fff;
-    --black: #000;
-    
-    --dark-1000: #201b2c;
-    --dark-900: #101026;
-    --dark-800: #282138;
-    --dark-700: #1D1D2E;
-    --dark-500: #2f2841;
-    --dark-300: #514869;
-    
-    --gray-50: #f0ffffde;
-    --gray-100: #8a8a8a;
-    
-    --green-700: #00ff8052;
-    --green-400: #00b661;
-    --green-300: #00FF88;
-    --green-100: #3fffb3;
+  --red-800: #8a1616;
+  --red-400: #f02f2f;
 
-    --red-800: #8a1616;
-    --red-400: #FF2F2F;
+  --blue-800: #3471cc;
 
-    --blue-800: #3471cc;
+  --purple-600: #442e7e;
 
-    --purple-600: #442E7E;
-
-    --dark-white: #d4d0ffde;
+  --dark-white: #09051bde;
 }
 
-button{
+[data-theme="dark"] {
+  --white: #fff;
+  --black: #000;
+
+  --dark-1000: #201b2c;
+  --dark-900: #101026;
+  --dark-800: #282138;
+  --dark-700: #1d1d2e;
+  --dark-500: #2f2841;
+  --dark-300: #514869;
+
+  --gray-50: #f0ffffde;
+  --gray-100: #8a8a8a;
+
+  --green-700: #00ff8052;
+  --green-400: #00b661;
+  --green-300: #00ff88;
+  --green-100: #3fffb3;
+
+  --red-800: #8a1616;
+  --red-400: #ff2f2f;
+
+  --blue-800: #3471cc;
+
+  --purple-600: #442e7e;
+
+  --dark-white: #d4d0ffde;
+}
+
+button {
   cursor: pointer;
 }
 
-a{
-  color:inherit;
+a {
+  color: inherit;
   text-decoration: none;
 }
 
-body{
+body {
   background: var(--dark-700);
 }
 
-body, input, textarea, select, button{
+body,
+input,
+textarea,
+select,
+button {
   font: 400 1rem sans-serif; //1rem = 16px
 }
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   html {
     font-size: 87.5%; // vai gerar 14px
   }
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 1080px) {
   html {
     font-size: 93.75%; // vai gerar 14px
   }

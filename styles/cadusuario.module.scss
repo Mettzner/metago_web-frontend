@@ -1,13 +1,13 @@
-#__next{
+#__next {
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 #__next * {
   box-sizing: border-box;
 }
 
-.container{
+.container {
   width: 100vw;
   height: 100vh;
   background: var(--dark-1000);
@@ -15,10 +15,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 
-.rightCadUsuario{
+.rightCadUsuario {
   width: 80vw;
   height: 100vh;
   display: flex;
@@ -26,7 +25,7 @@
   align-items: center;
 }
 
-.cardCadUsuario{
+.cardCadUsuario {
   width: 60%;
   display: flex;
   justify-content: center;
@@ -37,25 +36,24 @@
   border-radius: 20px;
   box-shadow: 0px 10px 40px var(--black);
 
-    h1{
-      color: var(--green-300);
-      font-weight: 800;
-      margin: 0;
-    }
+  h1 {
+    color: var(--green-300);
+    font-weight: 800;
+    margin: 0;
+  }
 
-    .nivelAcesso {
-      height: 3.7rem;
-      margin-top: 1rem;
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      padding: 15px;
-      background: var(--dark-300);
-      color: var(--gray-50);
-      font-size: 12pt;
-      box-shadow: 8px 10px 80px -20px var(--black);
-      outline: none;
-      box-sizing: border-box;
-    }
-
+  .nivelAcesso {
+    height: 3.7rem;
+    margin-top: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: var(--dark-300);
+    color: var(--gray-50);
+    font-size: 12pt;
+    box-shadow: 8px 10px 80px -20px var(--black);
+    outline: none;
+    box-sizing: border-box;
+  }
 }

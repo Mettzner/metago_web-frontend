@@ -4,7 +4,7 @@ import { AuthTokenError } from './erros/AuthTokenError'
 
 import { signOut } from '../contexts/AuthContext'
 
-export function setUpAPIClient(ctx = undefined){
+export function setUpAPIClient(ctx = undefined) {
     let cookies = parseCookies(ctx);
 
     const api = axios.create({
@@ -17,17 +17,17 @@ export function setUpAPIClient(ctx = undefined){
     api.interceptors.response.use(response => {
         return response;
     }, (error: AxiosError) => {
-        if(error.response.status === 401){
+        if (error.response.status === 401) {
             //qualquer erro 401 (não autorizado) devemos deslogar
-            if(typeof window !== undefined){
-            //chamar função para deslogar
-            signOut()
-        } else {
-            return Promise.reject(new AuthTokenError)
+            if (typeof window !== undefined) {
+                //chamar função para deslogar
+                signOut()
+            } else {
+                return Promise.reject(new AuthTokenError)
+            }
         }
-      }
 
-      return Promise.reject(error);
+        return Promise.reject(error);
 
     })
 

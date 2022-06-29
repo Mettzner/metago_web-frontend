@@ -8,9 +8,9 @@ export function canSSRGuest<P>(fn: GetServerSideProps<P>) {
     const cookies = parseCookies(ctx);
 
     // Se o cara tentar acessar a pagina porem tendo já um login salvo redirecionamos
-    if(cookies['@nextauth.token']){
+    if (cookies['@nextauth.token']) {
       return {
-        redirect:{
+        redirect: {
           destination: '/principal',
           permanent: false,
         }

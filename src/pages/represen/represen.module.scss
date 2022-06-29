@@ -1,45 +1,44 @@
 #__next {
-    margin: 0;
-    font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
 }
 
 #__next * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    background: var(--dark-1000);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: var(--dark-1000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .rightRepresen {
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardRepresen {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px 35px;
-    background: var(--dark-500);
-    border-radius: 20px;
-    box-shadow: 0px 10px 40px var(--black);
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: var(--dark-500);
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px var(--black);
 
-    h1 {
-        color: var(--green-300);
-        font-weight: 800;
-        margin: 0;
-    }
-
+  h1 {
+    color: var(--green-300);
+    font-weight: 800;
+    margin: 0;
+  }
 }

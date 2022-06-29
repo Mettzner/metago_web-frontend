@@ -8,13 +8,13 @@ import { toast } from 'react-toastify'
 
 import { canSSRAuth } from '../../utils/canSSRAuth'
 
-export default function Category(){
+export default function Category() {
     const [name, setName] = useState('')
 
-    async function handleRegister(event: FormEvent){
+    async function handleRegister(event: FormEvent) {
         event.preventDefault();
 
-        if(name === ""){
+        if (name === "") {
             return;
         }
 
@@ -27,34 +27,34 @@ export default function Category(){
         setName('');
     }
 
-    return(
+    return (
         <>
-        <Head>
-            <title>Nova Categoria - Pizzaria</title>
-        </Head>
-        <div>
-            <Header />
+            <Head>
+                <title>Nova Categoria - Pizzaria</title>
+            </Head>
+            <div>
+                <Header />
 
-            <main className={styles.container}>
-                <h1>Cadastrar categorias</h1>
+                <main className={styles.container}>
+                    <h1>Cadastrar categorias</h1>
 
-                <form className={styles.form} onSubmit={handleRegister}>
-                    <input 
-                    type="text"
-                    placeholder="Digite o nome da categoria"
-                    className={styles.input}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    />
+                    <form className={styles.form} onSubmit={handleRegister}>
+                        <input
+                            type="text"
+                            placeholder="Digite o nome da categoria"
+                            className={styles.input}
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
 
-                    <button className={styles.buttonAdd} type="submit">
-                        Cadastrar
-                    </button>
+                        <button className={styles.buttonAdd} type="submit">
+                            Cadastrar
+                        </button>
 
-                </form>
+                    </form>
 
-            </main>
-        </div>
+                </main>
+            </div>
         </>
     )
 }

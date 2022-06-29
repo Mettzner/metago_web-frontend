@@ -41,10 +41,10 @@ type AuthProviderProps = {
 
 export const AuthContext = createContext({} as AuthContextData)
 
-export function signOut(){
+export function signOut() {
     try {
-      destroyCookie(undefined, '@nextauth.token')
-      Router.push('/')
+        destroyCookie(undefined, '@nextauth.token')
+        Router.push('/')
     } catch {
         console.log('Erro ao deslogar')
     }
@@ -60,7 +60,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         //tentar pegar algo no cookie
         const { '@nextauth.token': token } = parseCookies();
 
-        if(token){
+        if (token) {
             api.get('/me').then(response => {
                 const { CODIGO, NOME, USUARIO } = response.data;
 
@@ -70,14 +70,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
                     USUARIO
                 })
             })
-            .catch(() => {
-                //Se deu erro desloga o user
-                signOut();
-            })
+                .catch(() => {
+                    //Se deu erro desloga o user
+                    signOut();
+                })
         }
 
     }, [])
-    async function signIn({ USUARIO, SENHA }: SignInProps){
+    async function signIn({ USUARIO, SENHA }: SignInProps) {
         try {
             const response = await api.post('/sessao', {
                 //requisitos para realizar o acesso
@@ -85,14 +85,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 SENHA
             })
             const { CODIGO, NOME, token } = response.data
-                //está setando um cookie para gerenciar os acessos do usuário
+            //está setando um cookie para gerenciar os acessos do usuário
             setCookie(undefined, '@nextauth.token', token, {
-                maxAge: 60 * 60 * 24 * 30, 
+                maxAge: 60 * 60 * 24 * 30,
                 path: "/" //Quais caminhos terão acesso ao cookie
             })
             //está inserido no cookie os dados do usuário que irão receber tratativas ao logar
             setUser({
-                CODIGO, 
+                CODIGO,
                 NOME,
                 USUARIO,
             })
@@ -111,9 +111,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
     }
 
-    async function cadUsuario({ NOME, USUARIO, SENHA, NIVEL_ACESSO }: CadUsuarioProps){
+    async function cadUsuario({ NOME, USUARIO, SENHA, NIVEL_ACESSO }: CadUsuarioProps) {
         try {
-            
+
             const response = await api.post('/cadusuario', {
                 NOME,
                 USUARIO,
@@ -131,7 +131,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
 
-    return(
+    return (
         <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, cadUsuario }}>
             {children}
         </AuthContext.Provider>

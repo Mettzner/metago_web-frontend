@@ -13,11 +13,11 @@ function MyApp({ Component, pageProps }) {
       {/* <ThemeProvider enableSystem={true} attribute="class"> */}
       {/* <ThemeProvider forcedTheme={Component.theme || null}> */}
       <ThemeProvider>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
         <ToastContainer autoClose={3000} />
       </ThemeProvider>
     </AuthProvider>
-    )
+  )
 }
 
 export default MyApp

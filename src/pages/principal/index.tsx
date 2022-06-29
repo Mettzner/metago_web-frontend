@@ -11,22 +11,22 @@ import Modal from 'react-modal'
 
 
 
-export default function Principal(){
+export default function Principal() {
 
     Modal.setAppElement('#__next')
 
-    return(
+    return (
         <>
-        <Head>
-            <title>Painel - Pizzaria</title>
-        </Head>
+            <Head>
+                <title>Painel - Pizzaria</title>
+            </Head>
 
-    <Header />
+            <Header />
 
-<div className={styles.container}>
-<h1>PRINCIPAL</h1>
+            <div className={styles.container}>
+                <h1>PRINCIPAL</h1>
 
-</div>
+            </div>
         </>
     )
 }
@@ -35,7 +35,7 @@ export const getServerSideProps = canSSRAuth(async (ctx) => {
     const apiClient = setUpAPIClient(ctx);
 
 
-    return{
-        props:{}
+    return {
+        props: {}
     }
 })

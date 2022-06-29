@@ -1,151 +1,151 @@
 .button {
-    height: 3.8rem;
-    width: 100%;
-    padding: 1rem 0;
-    margin: 1.8rem;
-    border: 0;
-    border-radius: 0.5rem;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.3rem;
-    color: var(--dark-1000);
-    background: var(--green-300);
-    cursor: pointer;
-    box-shadow: 0px 5px 40px -20px var(--green-300);
+  height: 3.8rem;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 1.8rem;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--green-300);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--green-300);
 
-    &[disabled] {
-        cursor: not-allowed;
+  &[disabled] {
+    cursor: not-allowed;
 
-        svg {
-            animation: animate 2s infinite;
-        }
+    svg {
+      animation: animate 2s infinite;
     }
+  }
 
-        &:hover {
-            filter: brightness(1.08)
-        }
+  &:hover {
+    filter: brightness(1.08);
+  }
 }
 
 .button40 {
-    height: 3.8rem;
-    width: 80%;
-    padding: 1rem 0;
-    margin-top: 1.8rem;
-    border: 0;
-    border-radius: 0.5rem;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.3rem;
-    color: var(--dark-1000);
-    background: var(--green-300);
-    cursor: pointer;
-    box-shadow: 0px 5px 40px -20px var(--green-300);
+  height: 3.8rem;
+  width: 80%;
+  padding: 1rem 0;
+  margin-top: 1.8rem;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--green-300);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--green-300);
 
-    &[disabled] {
-        cursor: not-allowed;
+  &[disabled] {
+    cursor: not-allowed;
 
-        svg {
-            animation: animate 2s infinite;
-        }
+    svg {
+      animation: animate 2s infinite;
     }
+  }
 
-    &:hover {
-        filter: brightness(1.08)
-    }
+  &:hover {
+    filter: brightness(1.08);
+  }
 }
 .buttonDelete {
-    height: 3.8rem;
-    width: 100%;
-    padding: 1rem 0;
-    margin: 1.8rem;
-    border: 0;
-    border-radius: 0.5rem;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.3rem;
-    color: var(--dark-1000);
-    background: var(--red-400);
-    cursor: pointer;
-    box-shadow: 0px 5px 40px -20px var(--red-400);
+  height: 3.8rem;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 1.8rem;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--red-400);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--red-400);
 
-    &[disabled] {
-        cursor: not-allowed;
+  &[disabled] {
+    cursor: not-allowed;
 
-        svg {
-            animation: animate 2s infinite;
-        }
+    svg {
+      animation: animate 2s infinite;
     }
+  }
 
-    &:hover {
-        filter: brightness(1.08)
-    }
+  &:hover {
+    filter: brightness(1.08);
+  }
 }
 
 .buttonDelete40 {
-    height: 3.8rem;
-    width: 80%;
-    padding: 1rem 0;
-    margin-top: 1.8rem;
-    border: 0;
-    border-radius: 0.5rem;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.3rem;
-    color: var(--dark-1000);
-    background: var(--red-400);
-    cursor: pointer;
-    box-shadow: 0px 5px 40px -20px var(--red-400);
+  height: 3.8rem;
+  width: 80%;
+  padding: 1rem 0;
+  margin-top: 1.8rem;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--red-400);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--red-400);
 
-    &[disabled] {
-        cursor: not-allowed;
+  &[disabled] {
+    cursor: not-allowed;
 
-        svg {
-            animation: animate 2s infinite;
-        }
+    svg {
+      animation: animate 2s infinite;
     }
+  }
 
-    &:hover {
-        filter: brightness(1.08)
-    }
+  &:hover {
+    filter: brightness(1.08);
+  }
 }
 
 @keyframes animate {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .buttonPesquisa {
-    height: 3.7rem;
-    width: 3.8rem;
-    margin-left: -3.8rem;
-    // padding-top: -4rem;
-    padding-bottom: 0.2rem;
-    border: 0;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    outline: none;
-    font-weight: 800;
-    color: var(--dark-white);
-    background: var(--purple-600);
-    cursor: pointer;
+  height: 3.7rem;
+  width: 3.8rem;
+  margin-left: -3.8rem;
+  // padding-top: -4rem;
+  padding-bottom: 0.2rem;
+  border: 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  outline: none;
+  font-weight: 800;
+  color: var(--dark-white);
+  background: var(--purple-600);
+  cursor: pointer;
 
-    &[disabled] {
-        cursor: not-allowed;
+  &[disabled] {
+    cursor: not-allowed;
 
-        svg {
-            animation: animate 2s infinite;
-        }
+    svg {
+      animation: animate 2s infinite;
     }
+  }
 
-    &:hover {
-        filter: brightness(1.08)
-    }
+  &:hover {
+    filter: brightness(1.08);
+  }
 }

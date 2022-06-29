@@ -17,13 +17,13 @@ export default function Home() {
 
   const [USUARIO, setUsuario] = useState('')
   const [SENHA, setSenha] = useState('')
-  
+
   const [loading, setLoading] = useState(false)
 
-  async function handleLogin(event: FormEvent){
+  async function handleLogin(event: FormEvent) {
     event.preventDefault();
 
-    if(USUARIO === '' || SENHA === ''){
+    if (USUARIO === '' || SENHA === '') {
       toast.error("Preencha todos os campos")
       return;
     }
@@ -42,43 +42,43 @@ export default function Home() {
 
   return (
     <>
-    <Head>
-    <title>
-      Metago - Login
-    </title>
-    </Head>
-    <div className={styles.mainLogin}>
-        <Image src={logoimg} alt="logo sujeito pizzaria"/>
-      <div className={styles.login}>
-        <form onSubmit={handleLogin}>
-          <div className={styles.rightLogin}>
-            <div className={styles.cardLogin}>
-              <h1>Login</h1>
-              <Input
-              placeholder="Usuário"
-              type="text"
-              value={USUARIO}
-              onChange={ (e) => setUsuario(e.target.value) }
-              />
+      <Head>
+        <title>
+          Metago - Login
+        </title>
+      </Head>
+      <div className={styles.mainLogin}>
+        <Image src={logoimg} alt="logo sujeito pizzaria" />
+        <div className={styles.login}>
+          <form onSubmit={handleLogin}>
+            <div className={styles.rightLogin}>
+              <div className={styles.cardLogin}>
+                <h1>Login</h1>
+                <Input
+                  placeholder="Usuário"
+                  type="text"
+                  value={USUARIO}
+                  onChange={(e) => setUsuario(e.target.value)}
+                />
 
-              <Input
-              type="password"
-              placeholder="Senha"
-              value={SENHA}
-              onChange={ (e) => setSenha(e.target.value) }
-              />
+                <Input
+                  type="password"
+                  placeholder="Senha"
+                  value={SENHA}
+                  onChange={(e) => setSenha(e.target.value)}
+                />
 
-              <Button
-              type="submit"
-              loading={loading}
-              >
-              Acessar
-              </Button>
+                <Button
+                  type="submit"
+                  loading={loading}
+                >
+                  Acessar
+                </Button>
+              </div>
             </div>
-          </div>
-        </form>      
+          </form>
+        </div>
       </div>
-    </div>
     </>
   )
 }

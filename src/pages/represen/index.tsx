@@ -8,15 +8,15 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 import { Input } from '../../components/ui/Input'
 import { Button } from '../../components/ui/Button'
 
-export default function CadMaquina(){
+export default function CadMaquina() {
     const [NOME, setNome] = useState('')
-    
-  const [loading, setLoading] = useState(false)
 
-    async function handleRegister(event: FormEvent){
+    const [loading, setLoading] = useState(false)
+
+    async function handleRegister(event: FormEvent) {
         event.preventDefault();
 
-        if(NOME === ""){
+        if (NOME === "") {
             return;
         }
 
@@ -29,38 +29,38 @@ export default function CadMaquina(){
         setNome('');
     }
 
-    return(
+    return (
         <>
-        <Head>
-            <title>Novo Funcionário - Metago</title>
-        </Head>
+            <Head>
+                <title>Novo Funcionário - Metago</title>
+            </Head>
             <Header />
-<div>
-    <div className={styles.container}>
-        <form  onSubmit={handleRegister}>
-            <div className={styles.rightRepresen}>
-                <div className={styles.cardRepresen}>
-                <h1>Cadastro de Funcionários</h1>
+            <div>
+                <div className={styles.container}>
+                    <form onSubmit={handleRegister}>
+                        <div className={styles.rightRepresen}>
+                            <div className={styles.cardRepresen}>
+                                <h1>Cadastro de Funcionários</h1>
 
-                    <Input
-                    placeholder="Nome"
-                    type="text"
-                    value={NOME}
-                    onChange={ (e) => setNome(e.target.value)}
-                    />
+                                <Input
+                                    placeholder="Nome"
+                                    type="text"
+                                    value={NOME}
+                                    onChange={(e) => setNome(e.target.value)}
+                                />
 
-                    <Button
-                    type="submit"
-                    loading={loading}
-                    >
-                    Cadastrar
-                </Button>
+                                <Button
+                                    type="submit"
+                                    loading={loading}
+                                >
+                                    Cadastrar
+                                </Button>
 
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
-    </div>
-</div>
         </>
     )
 }
