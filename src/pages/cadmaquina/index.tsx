@@ -6,7 +6,10 @@ import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import { Input } from '../../components/ui/Input'
-import { ButtonDelete40, Button40, ButtonDelete, Button } from '../../components/ui/Button'
+
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 
 export default function CadMaquina() {
     const [DESCRICAO, setDescricao] = useState('')
@@ -21,9 +24,13 @@ export default function CadMaquina() {
         }
 
         const apiClient = setUpAPIClient();
-        await apiClient.post('/cadmaquina', {
+        const response = await apiClient.post('/cadmaquina', {
             DESCRICAO: DESCRICAO
         })
+
+        if (response.status != 200) {
+            toast.error('Não foi possivel cadastrar, verificar!')
+        }
 
         toast.success(`Maquina ${DESCRICAO} cadastrada com sucesso`)
         setDescricao('');
@@ -32,7 +39,7 @@ export default function CadMaquina() {
     return (
         <>
             <Head>
-                <title>Nova Máquina - Metago</title>
+                <title>Metago | Nova Maquina</title>
             </Head>
             <Header />
             <div>
@@ -49,24 +56,11 @@ export default function CadMaquina() {
                                     onChange={(e) => setDescricao(e.target.value)}
                                 />
 
-                                <div className={styles.elemento2}>
-                                    <div className={styles.btnExcluir}>
-                                        <ButtonDelete
-                                            type="submit"
-                                            loading={loading}
-                                        >
-                                            Excluir
-                                        </ButtonDelete>
-                                    </div>
-                                    <div className={styles.btnCadastrar}>
-                                        <Button
-                                            type="submit"
-                                            loading={loading}
-                                        >
-                                            Cadastrar
-                                        </Button>
-                                    </div>
+                                <div className={styles.grupoBotao}>
+                                    <Button className={styles.btnExcluir}>Excluir</Button>
+                                    <Button onClick={handleRegister} className={styles.btnCadastrar}>Cadastrar</Button>
                                 </div>
+
 
                             </div>
                         </div>

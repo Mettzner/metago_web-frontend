@@ -17,16 +17,16 @@
   flex-direction: column;
 }
 
-.rightRepresen {
-  width: 50vw;
+.rightCadMaquina {
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cardRepresen {
-  width: 60%;
+.cardCliente {
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,4 +41,27 @@
     font-weight: 800;
     margin: 0;
   }
+}
+
+.elemento2 {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btnExcluir {
+  width: 80%;
+  margin-left: -1%;
+}
+
+.btnCadastrar {
+  width: 80%;
+  margin-right: -1%;
+}
+
+.margin {
+  margin-left: 2%;
+  margin-right: -2%;
 }

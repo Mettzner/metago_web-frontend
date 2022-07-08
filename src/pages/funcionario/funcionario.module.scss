@@ -1,6 +1,6 @@
 #__next {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 #__next * {
@@ -17,16 +17,16 @@
   flex-direction: column;
 }
 
-.rightCadMaquina {
-  width: 100vw;
-  height: 100vh;
+.rightFuncionario {
+  width: 80vw;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cardCadMaquina {
-  width: 60%;
+.cardFuncionario {
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;

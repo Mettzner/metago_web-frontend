@@ -1,14 +1,16 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
 import { Header } from '../../components/Header'
-import styles from './represen.module.scss'
+import styles from './funcionario.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import { Input } from '../../components/ui/Input'
-import { Button } from '../../components/ui/Button'
+// import { Button, ButtonDelete40 } from '../../components/ui/Button'
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
-export default function CadMaquina() {
+export default function Funcionario() {
     const [NOME, setNome] = useState('')
 
     const [loading, setLoading] = useState(false)
@@ -21,12 +23,15 @@ export default function CadMaquina() {
         }
 
         const apiClient = setUpAPIClient();
-        await apiClient.post('/represen', {
+        const response = await apiClient.post('/funcionario', {
             NOME: NOME
         })
-
-        toast.success(`Funcionário ${NOME} cadastrada com sucesso`)
+        if (response.status != 200) {
+            toast.error("Não foi possivel realizar o cadastro, verificar!")
+        }
+        toast.success(`Funcionário ${NOME} cadastrado com sucesso`)
         setNome('');
+
     }
 
     return (
@@ -38,8 +43,8 @@ export default function CadMaquina() {
             <div>
                 <div className={styles.container}>
                     <form onSubmit={handleRegister}>
-                        <div className={styles.rightRepresen}>
-                            <div className={styles.cardRepresen}>
+                        <div className={styles.rightFuncionario}>
+                            <div className={styles.cardFuncionario}>
                                 <h1>Cadastro de Funcionários</h1>
 
                                 <Input
@@ -49,12 +54,11 @@ export default function CadMaquina() {
                                     onChange={(e) => setNome(e.target.value)}
                                 />
 
-                                <Button
-                                    type="submit"
-                                    loading={loading}
-                                >
-                                    Cadastrar
-                                </Button>
+                                <div className={styles.grupoBotao}>
+                                    <Button className={styles.btnExcluir}>Excluir</Button>
+                                    <Button className={styles.btnCadastrar}>Cadastrar</Button>
+                                </div>
+
 
                             </div>
                         </div>

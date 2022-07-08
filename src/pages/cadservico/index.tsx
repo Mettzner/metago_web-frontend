@@ -6,7 +6,13 @@ import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import { Input10, Input20, Input40, Input30, Input50, Input60, Input70, Input80, Input100 } from '../../components/ui/Input'
-import { Button40, ButtonDelete40, ButtonPesquisa } from '../../components/ui/Button'
+import { ButtonPesquisa } from '../../components/ui/Button'
+
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function CadMaquina() {
     const [DESCRICAO, setDescricao] = useState('')
@@ -42,14 +48,15 @@ export default function CadMaquina() {
                             <h1>Cadastro de Serviço</h1>
                             <div className={styles.elemento}>
                                 <div className={styles.margin}>
+
                                     <Input20
                                         placeholder="Cliente"
                                         type="text"
                                         value={DESCRICAO}
                                         onChange={(e) => setDescricao(e.target.value)}
                                     />
-
                                     <ButtonPesquisa></ButtonPesquisa>
+
                                     <Input40
                                         placeholder=""
                                         type="text"
@@ -105,29 +112,16 @@ export default function CadMaquina() {
                                 </div>
                             </div>
 
-                            <div className={styles.elemento2}>
-                                <div className={styles.btnExcluir}>
-                                    <ButtonDelete40
-                                        type="submit"
-                                        loading={loading}
-                                    >
-                                        Excluir
-                                    </ButtonDelete40>
-                                </div>
-                                <div className={styles.btnCadastrar}>
-                                    <Button40
-                                        type="submit"
-                                        loading={loading}
-                                    >
-                                        Cadastrar
-                                    </Button40>
-                                </div>
+                            <div className={styles.grupoBotao}>
+                                <Button className={styles.btnExcluir}>Excluir</Button>
+                                <Button className={styles.btnCadastrar}>Cadastrar</Button>
                             </div>
+
 
                         </div>
                     </div>
                 </form>
-            </div>
+            </div >
         </>
     )
 }

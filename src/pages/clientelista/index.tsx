@@ -6,6 +6,7 @@ import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import { api } from '../../services/apiCliente'
+import { Button40 } from '../../components/ui/Button'
 
 // import * as React from 'react';
 import Table from '@mui/material/Table';
@@ -30,7 +31,7 @@ export default function CadMaquina() {
     useEffect(() => {
         async function loadClientes() {
             const response = await api.get("/cliente")
-            console.log(response.data)
+            // console.log(response.data)
             setClientes(response.data)
         }
         loadClientes();
@@ -45,15 +46,15 @@ export default function CadMaquina() {
         setPage(0);
     };
 
-    // async function handleDelete(ID_CLIENTE){
-    //     
-    //       var result = await api.delete('/cliente'+ID_CLIENTE)
-    //       if(result.status === 200){
-    //         window.location.href = '/listcliente'
-
+    // async function handleUpdate(ID_CLIENTE: string) {
+    //     window.location.href = '/editcliente/:?' + ID_CLIENTE
     // }
 
 
+    async function chamaCadastro() {
+        event.preventDefault()
+        window.location.href = '/cliente'
+    }
 
     async function handleDelete(ID_CLIENTE: string) {
         if (confirm("Deseja realmente excluir este cliente?")) {
@@ -63,7 +64,7 @@ export default function CadMaquina() {
                 }
             })
             if (result.status === 200) {
-                window.location.href = '/listcliente'
+                window.location.href = '/clientelista'
 
             } else {
                 alert('erro')
@@ -74,7 +75,7 @@ export default function CadMaquina() {
     return (
         <>
             <Head>
-                <title>Novo Cliente - Metago</title>
+                <title>Metago | Lista de Clientes</title>
             </Head>
             <Header />
             <div className={styles.container}>
@@ -82,9 +83,9 @@ export default function CadMaquina() {
                     <div className={styles.rightCadMaquina}>
                         <div className={styles.cardCliente}>
                             <div className={styles.bodyTable}><Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                                <TableContainer className={styles.cortable} component={Paper} sx={{ maxHeight: 440 }}>
-                                    <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table" className={styles.cortable}>
-                                        <TableHead>
+                                <TableContainer className={styles.tabelaClientes} component={Paper} sx={{ maxHeight: 600 }}>
+                                    <Table sx={{ minWidth: 650, color: 'white' }} size="small" className={styles.tabelaClientes} >
+                                        <TableHead >
                                             <TableRow className={styles.paginacao}>
                                                 <TableCell>CODIGO</TableCell>
                                                 <TableCell>NOME</TableCell>
@@ -95,7 +96,7 @@ export default function CadMaquina() {
                                                 <TableCell align='right'>OPÇÕES</TableCell>
                                             </TableRow>
                                         </TableHead>
-                                        <TableBody>
+                                        <TableBody >
                                             {clientes.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                                                 <TableRow className={styles.row}
                                                     key={row.ID_CLIENTE}>
@@ -107,7 +108,8 @@ export default function CadMaquina() {
                                                     <TableCell>{new Date(row.DT_CADASTRO).toLocaleString('pt-br')}</TableCell>
                                                     <TableCell align='right'>
                                                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                                                            <Button className={styles.btnAlterar}>Alterar</Button>
+                                                            {/* <Button className={styles.btnAlterar} onClick={() => handleUpdate(row.ID_CLIENTE)}>Alterar</Button> */}
+                                                            <Button className={styles.btnAlterar} href={'/editcliente/' + row.ID_CLIENTE}>Alterar</Button>
                                                             <Button className={styles.btnExcluir} onClick={() => handleDelete(row.ID_CLIENTE)}>Excluir</Button>
                                                         </ButtonGroup>
                                                     </TableCell>
@@ -126,8 +128,10 @@ export default function CadMaquina() {
                                     onRowsPerPageChange={handleChangeRowsPerPage}
                                 />
                             </Paper>
+                                <Button40 onClick={() => chamaCadastro()}>Incluir</Button40>
                             </div>
                         </div>
+
                     </div>
                 </form>
             </div>

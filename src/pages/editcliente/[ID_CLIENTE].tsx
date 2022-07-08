@@ -8,11 +8,11 @@ import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import { api } from '../../services/apiCliente'
+import { useRouter } from 'next/router';
 import { Input20, Input80, Input50, Input100 } from '../../components/ui/Input'
 import { Button40, ButtonDelete40, ButtonPesquisa } from '../../components/ui/Button'
-import { useParams } from 'react-router-dom'
 
-export default function EditCliente() {
+export default function Cliente() {
     const [NOME, setNome] = useState('')
     const [CNPJ, setCNPJ] = useState('')
     const [TELEFONE, setTelefone] = useState('')
@@ -27,6 +27,10 @@ export default function EditCliente() {
     const [PAIS, setPais] = useState('')
 
     const [loading, setLoading] = useState(false)
+
+    const router = useRouter();
+    const { ID_CLIENTE } = router.query;
+    // const [ID_CLIENTE] = useState('')
 
     async function handleRegister(event: FormEvent) {
         event.preventDefault();
@@ -56,7 +60,7 @@ export default function EditCliente() {
             toast.error('Não foi possivel cadastrar o cliente, verifique!')
         }
 
-        toast.success(`Cliente ${NOME} cadastrado com sucesso`)
+        toast.success(`Cliente ${NOME} alterado com sucesso`)
         setNome('')
         setCNPJ('')
         setTelefone('')
@@ -71,17 +75,37 @@ export default function EditCliente() {
         setPais('')
     }
 
+    useEffect(() => {
+        async function getCliente() {
+            const response = await api.get(`/editcliente/${ID_CLIENTE}`);
+            console.log(response.data[0]);
+            setNome(response.data[0].NOME)
+            setCNPJ(response.data[0].CNPJ)
+            setTelefone(response.data[0].TELEFONE)
+            setEmail(response.data[0].EMAIL)
+            setEndereco(response.data[0].ENDERECO)
+            setCEP(response.data[0].CEP)
+            setNumero(response.data[0].NUMERO)
+            setBairro(response.data[0].BAIRRO)
+            setCidade(response.data[0].CIDADE)
+            setUF(response.data[0].UF)
+            setComplemento(response.data[0].COMPLEMENTO)
+            setPais(response.data[0].PAIS)
+        }
+        getCliente()
+    }, [])
+
     return (
         <>
             <Head>
-                <title>Metago | Cadastro de Clientes</title>
+                <title>Metago | Atualização de Clientes </title>
             </Head>
             <Header />
             <div className={styles.container}>
                 <form onSubmit={handleRegister}>
-                    <div className={styles.right}>
-                        <div className={styles.card}>
-                            <h1>Cadastro de Cliente</h1>
+                    <div className={styles.rightCadMaquina}>
+                        <div className={styles.cardCliente}>
+                            <h1>Atualização de Cliente</h1>
                             <div className={styles.elemento}>
                                 <Input100
                                     placeholder="Nome"

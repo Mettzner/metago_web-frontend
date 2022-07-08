@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.rightCadMaquina {
+.right {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -25,8 +25,8 @@
   align-items: center;
 }
 
-.cardCadMaquina {
-  width: 60%;
+.card {
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,6 +44,7 @@
 }
 
 .btnCadastrar {
+  margin-right: 1.5%;
   margin-top: 1rem;
   height: 3.8rem;
   width: 40%;
@@ -72,6 +73,7 @@
 }
 
 .btnExcluir {
+  margin-left: 1.5%;
   margin-top: 1rem;
   height: 3.8rem;
   width: 40%;
@@ -102,6 +104,6 @@
 
 .grupoBotao {
   display: flex;
-  width: 100%;
+  width: 95%;
   justify-content: space-between;
 }

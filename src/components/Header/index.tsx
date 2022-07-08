@@ -9,6 +9,8 @@ import * as FaIcons from "react-icons/fa";
 import { useTheme } from 'next-themes'
 import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 export function Header() {
   const { theme, setTheme } = useTheme()
@@ -19,16 +21,15 @@ export function Header() {
     if (currentTheme === 'dark') {
       return (
         <SunIcon
-          className="w-7 h-7"
           role="button"
           onClick={() => setTheme('light')}
         />
       )
     }
     else {
+      <SunIcon className={styles.somebtn} />
       return (
         <MoonIcon
-          className="w-7 h-7"
           role="button"
           onClick={() => setTheme('dark')}
         />
@@ -43,6 +44,7 @@ export function Header() {
   const { signOut } = useContext(AuthContext);
   // const { user } = useContext(AuthContext)
 
+  renderThemeChanger()
   return (
     <>
       <form>
@@ -61,23 +63,18 @@ export function Header() {
                 <Link href="/principal">
                   <></>
                 </Link>
-                {/* <div className={styles.menuBarsClose}>
-                              <Link  href='#'>
-                                  <a><AiIcons.AiOutlineClose /></a>
-                              </Link>
-                            </div> */}
               </li>
 
               <div className={styles.groupText}>
                 <div className={styles.ThemeIcon}>
-                  <button onClick={() => setTheme('light')}>Light Mode</button>
-                  <button onClick={() => setTheme('dark')}>Dark Mode</button>
-                  {/* <a className={styles.SunIcon}><SunIcon onClick={() => setTheme('light')}></SunIcon></a>
-                                <a className={styles.MoonIcon}><MoonIcon onClick={() => setTheme('dark')}></MoonIcon></a> */}
+                  <div className={styles.grupoBotoes}>
+                    <Button id='light' className={styles.SunIcon}><SunIcon onClick={() => setTheme('light')}></SunIcon></Button>
+                    <Button id='dark' className={styles.MoonIcon}><MoonIcon onClick={() => setTheme('dark')}></MoonIcon></Button>
+                  </div>
                 </div>
                 <div className={styles.navText}>
                   <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/cliente">
+                  <Link href="/clientelista">
                     <a>Cadastro de Cliente</a>
                   </Link>
                 </div>
@@ -105,7 +102,7 @@ export function Header() {
 
                 <div className={styles.navText}>
                   <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/represen">
+                  <Link href="/funcionario">
                     <a>Cadastro de Funcionario</a>
                   </Link>
                 </div>
@@ -116,13 +113,12 @@ export function Header() {
                     <a>Cadastro de Produto</a>
                   </Link>
                 </div>
-
-                {/* <div className={styles.navText}>
-                              <IoIcons.IoMdPeople size={30} color="#FFF" />
-                              <Link href="/category">
-                                  <a>Categoria</a>
-                              </Link>
-                            </div> */}
+                <div className={styles.navText}>
+                  <IoIcons.IoMdPeople size={30} color="#FFF" />
+                  <Link href="/pagar">
+                    <a>Cadastro de Contas a pagar</a>
+                  </Link>
+                </div>
               </div>
 
               <button onClick={signOut} className={styles.outButton}>

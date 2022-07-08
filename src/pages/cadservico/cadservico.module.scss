@@ -43,25 +43,74 @@
   }
 }
 
-.elemento2 {
-  width: 100%;
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: center;
+.btnCadastrar {
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--green-300);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--green-300);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--green-300);
+  }
 }
 
 .btnExcluir {
-  width: 80%;
-  margin-left: -1%;
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--red-400);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--red-400);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--red-400);
+  }
 }
 
-.btnCadastrar {
-  width: 80%;
-  margin-right: -1%;
+.grupoBotao {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.margin {
-  margin-left: 2%;
-  margin-right: -2%;
+.grupoFields {
+  display: flex;
+}
+
+.fieldsPadrao {
+  background: var(--dark-300);
+  height: 3.7rem;
 }

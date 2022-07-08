@@ -7,7 +7,7 @@
 
 #__next {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 #__next * {
@@ -115,4 +115,67 @@ button {
   html {
     font-size: 93.75%; // vai gerar 14px
   }
+}
+
+.btnCadastrar {
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--green-300);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--green-300);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--green-300);
+  }
+}
+
+.btnExcluir {
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--red-400);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--red-400);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--red-400);
+  }
+}
+
+.grupoBotao {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

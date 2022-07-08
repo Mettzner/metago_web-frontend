@@ -25,8 +25,8 @@
   align-items: center;
 }
 
-.cardCadMaquina {
-  width: 75%;
+.cardProduto {
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,25 +43,65 @@
   }
 }
 
-.btnExcluir {
-  width: 80%;
-  margin-left: -1%;
-}
-
 .btnCadastrar {
-  width: 80%;
-  margin-right: -1%;
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--green-300);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--green-300);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--green-300);
+  }
 }
 
-.margin {
-  margin-left: 2%;
-  margin-right: -2%;
+.btnExcluir {
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--dark-1000);
+  background: var(--red-400);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--red-400);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--red-400);
+  }
 }
 
-.elemento2 {
-  width: 100%;
+.grupoBotao {
   display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
 }
