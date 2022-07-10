@@ -1,50 +1,40 @@
 import { useContext, useState, useEffect } from 'react'
-import styles from './styles.module.scss'
-import Link from 'next/link'
-import { FiLogOut } from 'react-icons/fi'
 import { AuthContext } from '../../contexts/AuthContext'
-import * as IoIcons from "react-icons/io";
-import { IconContext } from "react-icons";
-import * as FaIcons from "react-icons/fa";
+import Link from 'next/link'
 import { useTheme } from 'next-themes'
+
+import * as MdIcons from "react-icons/Md"
+import * as TbIcons from "react-icons/Tb"
+import * as CgIcons from "react-icons/Cg"
+import * as IoIcons from "react-icons/io";
+import * as FaIcons from "react-icons/fa";
+import * as BsIcons from "react-icons/bs";
+import { FiLogOut } from 'react-icons/fi'
+import { IconContext } from "react-icons";
 import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 
+import styles from './styles.module.scss'
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 
-export function Header() {
+export function Sidebar() {
   const { theme, setTheme } = useTheme()
+  const currentTheme = theme
 
-  const renderThemeChanger = () => {
-    const currentTheme = theme === 'dark' ? 'dark' : 'light';
-
+  function alteraTema() {
     if (currentTheme === 'dark') {
-      return (
-        <SunIcon
-          role="button"
-          onClick={() => setTheme('light')}
-        />
-      )
-    }
-    else {
-      <SunIcon className={styles.somebtn} />
-      return (
-        <MoonIcon
-          role="button"
-          onClick={() => setTheme('dark')}
-        />
-      )
+      setTheme('light')
+    } else {
+      setTheme('dark')
     }
   }
+  const icone = currentTheme === "dark" ? <SunIcon className={styles.MoonIcon} /> : <MoonIcon className={styles.SunIcon} />
 
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
   const { signOut } = useContext(AuthContext);
-  // const { user } = useContext(AuthContext)
 
-  renderThemeChanger()
   return (
     <>
       <form>
@@ -60,7 +50,7 @@ export function Header() {
           <nav className={sidebar ? styles.navMenuActive : styles.navMenu} onClick={showSidebar}>
             <ul className={styles.navMenuItems}>
               <li className={styles.navbarToggle}>
-                <Link href="/principal">
+                <Link href="/home">
                   <></>
                 </Link>
               </li>
@@ -68,57 +58,63 @@ export function Header() {
               <div className={styles.groupText}>
                 <div className={styles.ThemeIcon}>
                   <div className={styles.grupoBotoes}>
-                    <Button id='light' className={styles.SunIcon}><SunIcon onClick={() => setTheme('light')}></SunIcon></Button>
-                    <Button id='dark' className={styles.MoonIcon}><MoonIcon onClick={() => setTheme('dark')}></MoonIcon></Button>
+                    <Button onClick={alteraTema}>{icone}</Button>
                   </div>
                 </div>
                 <div className={styles.navText}>
                   <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/clientelista">
+                  <Link href="/acesso_cliente">
                     <a>Cadastro de Cliente</a>
                   </Link>
                 </div>
 
                 <div className={styles.navText}>
-                  <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/cadservico">
+                  <CgIcons.CgMenuBoxed size={30} color="#FFF" />
+                  <Link href="/acesso_servico">
                     <a>Cadastro de Serviços</a>
                   </Link>
                 </div>
 
                 <div className={styles.navText}>
-                  <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/cadusuario">
-                    <a>Cadastro de Usuário</a>
-                  </Link>
-                </div>
-
-                <div className={styles.navText}>
-                  <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/cadmaquina">
+                  <TbIcons.TbTractor size={30} className={styles.Icones} />
+                  <Link href="/acesso_maquina">
                     <a>Cadastro de Maquina</a>
                   </Link>
                 </div>
 
                 <div className={styles.navText}>
-                  <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/funcionario">
+                  <BsIcons.BsFillPersonPlusFill size={30} color="#FFF" />
+                  <Link href="/acesso_funcionario">
                     <a>Cadastro de Funcionario</a>
                   </Link>
                 </div>
 
                 <div className={styles.navText}>
-                  <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/cadproduto">
+                  <CgIcons.CgBox size={28} color="#FFF" />
+                  <Link href="/acesso_produto">
                     <a>Cadastro de Produto</a>
                   </Link>
                 </div>
                 <div className={styles.navText}>
-                  <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/pagar">
-                    <a>Cadastro de Contas a pagar</a>
+                  <CgIcons.CgFileRemove size={32} color="#FFF" />
+                  <Link href="/acesso_pagar">
+                    <a>Conta a Pagar</a>
                   </Link>
                 </div>
+                <div className={styles.navText}>
+                  <CgIcons.CgFileAdd size={32} color="#FFF" />
+                  <Link href="/acesso_receber">
+                    <a>Contas a Receber</a>
+                  </Link>
+                </div>
+
+                <div className={styles.navText}>
+                  <MdIcons.MdManageAccounts size={30} color="#FFF" />
+                  <Link href="/acesso_usuario">
+                    <a>Cadastro de Usuário</a>
+                  </Link>
+                </div>
+
               </div>
 
               <button onClick={signOut} className={styles.outButton}>
@@ -132,4 +128,4 @@ export function Header() {
   )
 }
 
-export default Header;
+export default Sidebar;

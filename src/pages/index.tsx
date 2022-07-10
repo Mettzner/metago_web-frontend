@@ -8,8 +8,6 @@ import { useContext, FormEvent, useState } from 'react'
 import { AuthContext } from '../contexts/AuthContext'
 import { toast } from 'react-toastify'
 
-import Link from 'next/link'
-
 import { canSSRGuest } from '../utils/canSSRGuest'
 
 export default function Home() {
@@ -51,8 +49,8 @@ export default function Home() {
         <Image src={logoimg} alt="logo sujeito pizzaria" />
         <div className={styles.login}>
           <form onSubmit={handleLogin}>
-            <div className={styles.rightLogin}>
-              <div className={styles.cardLogin}>
+            <div className={styles.right}>
+              <div className={styles.card}>
                 <h1>Login</h1>
                 <Input
                   placeholder="Usuário"

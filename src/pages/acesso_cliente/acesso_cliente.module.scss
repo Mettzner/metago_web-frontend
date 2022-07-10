@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.rightCadMaquina {
+.right {
   width: 80vw;
   height: 100vh;
   display: flex;
@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.cardCliente {
+.card {
   height: 80%;
   width: 80%;
   display: flex;
@@ -44,7 +44,7 @@
   }
 }
 
-.tabelaClientes {
+.tabela {
   background-color: var(--dark-300);
   color: var(--dark-white) !important;
 }

@@ -9,8 +9,7 @@ import { AuthContext } from '../../contexts/AuthContext'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 
-import { Header } from '../../components/Header'
-// import Link from 'next/link';
+import { Sidebar } from '../../components/Header'
 
 
 export default function CadUsuario() {
@@ -58,14 +57,14 @@ export default function CadUsuario() {
           Cadastro de Usuário - Metago
         </title>
       </Head>
-      <Header />
+      <Sidebar />
 
       <div className={styles.container}>
         <Image src={logoimg} alt="logo sujeito pizzaria" />
         <div className={styles.login}>
           <form onSubmit={handleCadUsuario}>
-            <div className={styles.rightCadUsuario}>
-              <div className={styles.cardCadUsuario}>
+            <div className={styles.right}>
+              <div className={styles.card}>
                 <h1>Cadastro</h1>
 
                 <Input

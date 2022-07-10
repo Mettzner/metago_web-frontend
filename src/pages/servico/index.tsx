@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
-import { Header } from '../../components/Header'
+import { Sidebar } from '../../components/Header'
 import styles from './cadservico.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
@@ -14,7 +14,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
-export default function CadMaquina() {
+export default function Servico() {
     const [DESCRICAO, setDescricao] = useState('')
 
     const [loading, setLoading] = useState(false)
@@ -40,11 +40,11 @@ export default function CadMaquina() {
             <Head>
                 <title>Novo Serviço - Metago</title>
             </Head>
-            <Header />
+            <Sidebar />
             <div className={styles.container}>
                 <form onSubmit={handleRegister}>
-                    <div className={styles.rightCadMaquina}>
-                        <div className={styles.cardCliente}>
+                    <div className={styles.right}>
+                        <div className={styles.card}>
                             <h1>Cadastro de Serviço</h1>
                             <div className={styles.elemento}>
                                 <div className={styles.margin}>

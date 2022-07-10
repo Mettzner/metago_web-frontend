@@ -103,7 +103,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             toast.success("Logado com sucesso")
 
             //Redirecionar o usar para /principal
-            Router.push('/principal')
+            Router.push('/home')
 
         } catch (err) {
             console.log(err)

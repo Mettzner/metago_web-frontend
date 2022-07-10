@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
-import { Header } from '../../components/Header'
+import { Sidebar } from '../../components/Header'
 import styles from './funcionario.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
@@ -39,12 +39,12 @@ export default function Funcionario() {
             <Head>
                 <title>Novo Funcionário - Metago</title>
             </Head>
-            <Header />
+            <Sidebar />
             <div>
                 <div className={styles.container}>
                     <form onSubmit={handleRegister}>
-                        <div className={styles.rightFuncionario}>
-                            <div className={styles.cardFuncionario}>
+                        <div className={styles.right}>
+                            <div className={styles.card}>
                                 <h1>Cadastro de Funcionários</h1>
 
                                 <Input

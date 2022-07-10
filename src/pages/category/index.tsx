@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
-import { Header } from '../../components/Header'
+import { Sidebar } from '../../components/Header'
 import styles from './style.module.scss'
 
 import { setUpAPIClient } from '../../services/api'
@@ -33,7 +33,7 @@ export default function Category() {
                 <title>Nova Categoria - Pizzaria</title>
             </Head>
             <div>
-                <Header />
+                <Sidebar />
 
                 <main className={styles.container}>
                     <h1>Cadastrar categorias</h1>

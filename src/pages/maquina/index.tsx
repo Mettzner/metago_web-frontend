@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
-import { Header } from '../../components/Header'
-import styles from './cadmaquina.module.scss'
+import { Sidebar } from '../../components/Header'
+import styles from './maquina.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 
-export default function CadMaquina() {
+export default function Maquina() {
     const [DESCRICAO, setDescricao] = useState('')
 
     const [loading, setLoading] = useState(false)
@@ -24,7 +24,7 @@ export default function CadMaquina() {
         }
 
         const apiClient = setUpAPIClient();
-        const response = await apiClient.post('/cadmaquina', {
+        const response = await apiClient.post('/maquina', {
             DESCRICAO: DESCRICAO
         })
 
@@ -41,12 +41,12 @@ export default function CadMaquina() {
             <Head>
                 <title>Metago | Nova Maquina</title>
             </Head>
-            <Header />
+            <Sidebar />
             <div>
                 <div className={styles.container}>
                     <form onSubmit={handleRegister}>
-                        <div className={styles.rightCadMaquina}>
-                            <div className={styles.cardCadMaquina}>
+                        <div className={styles.righta}>
+                            <div className={styles.card}>
                                 <h1>Cadastro de Máquina</h1>
 
                                 <Input

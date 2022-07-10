@@ -1,8 +1,6 @@
 import React, { useState, FormEvent, useEffect } from 'react'
-import * as FaIcons from "react-icons/fa";
-import * as BsIcons from "react-icons/bs";
 import Head from 'next/head'
-import { Header } from '../../components/Header'
+import Sidebar from '../../components/Header'
 import styles from './cliente.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
@@ -30,17 +28,13 @@ export default function Cliente() {
 
     const router = useRouter();
     const { ID_CLIENTE } = router.query;
-    // const [ID_CLIENTE] = useState('')
 
-    async function handleRegister(event: FormEvent) {
-        event.preventDefault();
-
-        if (NOME === "") {
-            return;
-        }
+    async function handleRegister() {
+        event.preventDefault()
 
         const apiClient = setUpAPIClient();
-        const response = await apiClient.post('/cliente', {
+        const response = await apiClient.put(`/cliente/altera/${ID_CLIENTE}`, {
+            ID_CLIENTE: ID_CLIENTE,
             NOME: NOME,
             CNPJ: CNPJ,
             TELEFONE: TELEFONE,
@@ -53,13 +47,24 @@ export default function Cliente() {
             UF: UF,
             COMPLEMENTO: COMPLEMENTO,
             PAIS: PAIS,
-
         })
+        console.log(response)
 
         if (response.status != 200) {
             toast.error('Não foi possivel cadastrar o cliente, verifique!')
         }
 
+        await mensagemSucesso()
+        window.location.href = '/acesso_cliente'
+    }
+
+    async function voltaPagina() {
+        event.preventDefault()
+        window.location.href = '/acesso_cliente'
+    }
+
+
+    async function mensagemSucesso() {
         toast.success(`Cliente ${NOME} alterado com sucesso`)
         setNome('')
         setCNPJ('')
@@ -77,7 +82,7 @@ export default function Cliente() {
 
     useEffect(() => {
         async function getCliente() {
-            const response = await api.get(`/editcliente/${ID_CLIENTE}`);
+            const response = await api.get(`/cliente/detalhes/${ID_CLIENTE}`);
             console.log(response.data[0]);
             setNome(response.data[0].NOME)
             setCNPJ(response.data[0].CNPJ)
@@ -100,32 +105,33 @@ export default function Cliente() {
             <Head>
                 <title>Metago | Atualização de Clientes </title>
             </Head>
-            <Header />
+            <Sidebar />
             <div className={styles.container}>
-                <form onSubmit={handleRegister}>
-                    <div className={styles.rightCadMaquina}>
-                        <div className={styles.cardCliente}>
-                            <h1>Atualização de Cliente</h1>
+                <form>
+                    <div className={styles.right}>
+                        <div className={styles.card}>
+                            <h1>Atualização de Usuario</h1>
                             <div className={styles.elemento}>
                                 <Input100
                                     placeholder="Nome"
                                     type="text"
-                                    value={NOME}
-                                    onChange={(e) => setNome(e.target.value)}
+                                    value={(NOME).toUpperCase()}
+                                    onChange={(e) => setNome(e.target.value.toUpperCase())}
+
                                 />
                                 <ButtonPesquisa></ButtonPesquisa>
                                 <div className={styles.margin}>
                                     <Input50
                                         placeholder="CPF/CNPJ"
                                         type="text"
-                                        value={CNPJ}
-                                        onChange={(e) => setCNPJ(e.target.value)}
+                                        value={(CNPJ).toUpperCase()}
+                                        onChange={(e) => setCNPJ(e.target.value.toUpperCase())}
                                     />
                                     <Input50
                                         placeholder="Telefone"
                                         type="text"
-                                        value={TELEFONE}
-                                        onChange={(e) => setTelefone(e.target.value)}
+                                        value={(TELEFONE).toUpperCase()}
+                                        onChange={(e) => setTelefone(e.target.value.toUpperCase())}
                                     />
                                 </div>
                                 <Input100
@@ -137,68 +143,68 @@ export default function Cliente() {
                                 <Input80
                                     placeholder="Endereço"
                                     type="text"
-                                    value={ENDERECO}
-                                    onChange={(e) => setEndereco(e.target.value)}
+                                    value={(ENDERECO).toUpperCase()}
+                                    onChange={(e) => setEndereco(e.target.value.toUpperCase())}
                                 />
                                 <Input20
                                     placeholder="CEP"
                                     type="text"
-                                    value={CEP}
-                                    onChange={(e) => setCEP(e.target.value)}
+                                    value={(CEP).toUpperCase()}
+                                    onChange={(e) => setCEP(e.target.value.toUpperCase())}
                                 />
                                 <div className={styles.margin}>
                                     <Input20
                                         placeholder="Numero"
                                         type="text"
-                                        value={NUMERO}
-                                        onChange={(e) => setNumero(e.target.value)}
+                                        value={(NUMERO).toUpperCase()}
+                                        onChange={(e) => setNumero(e.target.value.toUpperCase())}
                                     />
                                     <Input20
                                         placeholder="Bairro"
                                         type="text"
-                                        value={BAIRRO}
-                                        onChange={(e) => setBairro(e.target.value)}
+                                        value={(BAIRRO).toUpperCase()}
+                                        onChange={(e) => setBairro(e.target.value.toUpperCase())}
                                     />
                                     <Input20
                                         placeholder="Cidade"
                                         type="text"
-                                        value={CIDADE}
-                                        onChange={(e) => setCidade(e.target.value)}
+                                        value={(CIDADE).toUpperCase()}
+                                        onChange={(e) => setCidade(e.target.value.toUpperCase())}
                                     />
                                     <Input20
                                         placeholder="UF"
                                         type="text"
-                                        value={UF}
-                                        onChange={(e) => setUF(e.target.value)}
+                                        value={(UF).toUpperCase()}
+                                        onChange={(e) => setUF(e.target.value.toUpperCase())}
                                     />
                                 </div>
                                 <Input80
                                     placeholder="Complemento"
                                     type="text"
-                                    value={COMPLEMENTO}
-                                    onChange={(e) => setComplemento(e.target.value)}
+                                    value={(COMPLEMENTO).toUpperCase()}
+                                    onChange={(e) => setComplemento(e.target.value.toUpperCase())}
                                 />
                                 <Input20
                                     placeholder="Pais"
                                     type="text"
-                                    value={PAIS}
-                                    onChange={(e) => setPais(e.target.value)}
+                                    value={(PAIS).toUpperCase()}
+                                    onChange={(e) => setPais(e.target.value.toUpperCase())}
                                 />
                             </div>
 
                             <div className={styles.elemento2}>
                                 <div className={styles.btnExcluir}>
                                     <ButtonDelete40
-                                        type="submit"
-                                        loading={loading}
+                                        onClick={() => voltaPagina()}
                                     >
-                                        Excluir
+                                        Voltar
                                     </ButtonDelete40>
                                 </div>
                                 <div className={styles.btnCadastrar}>
                                     <Button40
                                         type="submit"
                                         loading={loading}
+                                        onClick={() => handleRegister()}
                                     >
                                         Cadastrar
                                     </Button40>

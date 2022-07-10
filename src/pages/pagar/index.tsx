@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
-import { Header } from '../../components/Header'
+import { Sidebar } from '../../components/Header'
 import styles from './pagar.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
@@ -45,7 +45,7 @@ export default function Pagar() {
             <Head>
                 <title>Contas a pagar - Metago</title>
             </Head>
-            <Header />
+            <Sidebar />
             <div className={styles.container}>
                 <form onSubmit={handleRegister}>
                     <div className={styles.right}>

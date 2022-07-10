@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.cardLogin {
+.card {
   width: 60%;
   display: flex;
   justify-content: center;
@@ -76,7 +76,7 @@
 // }
 
 @media only screen and (max-width: 950px) {
-  .cardLogin {
+  .card {
     width: 85%;
   }
 }
@@ -86,12 +86,12 @@
     flex-direction: column;
   }
 
-  .rightLogin {
+  .right {
     width: 100%;
     height: auto;
   }
 
-  .cardLogin {
+  .card {
     width: 90%;
   }
 }

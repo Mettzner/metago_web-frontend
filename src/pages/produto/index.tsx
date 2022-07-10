@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
-import { Header } from '../../components/Header'
+import { Sidebar } from '../../components/Header'
 import styles from './cadproduto.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
@@ -10,10 +10,6 @@ import { ButtonPesquisa, ButtonDelete } from '../../components/ui/Button'
 
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-
-
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 
 export default function CadProduto() {
     const [DESCRICAO, setDescricao] = useState('')
@@ -49,11 +45,11 @@ export default function CadProduto() {
             <Head>
                 <title>Novo Produto - Metago</title>
             </Head>
-            <Header />
+            <Sidebar />
             <div className={styles.container}>
                 <form onSubmit={handleRegister}>
-                    <div className={styles.rightCadMaquina}>
-                        <div className={styles.cardProduto}>
+                    <div className={styles.right}>
+                        <div className={styles.card}>
                             <h1>Cadastro de Produto</h1>
                             <div className={styles.grupoBotao}>
                                 <Input90

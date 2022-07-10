@@ -2,7 +2,7 @@ import { useState, ChangeEvent, FormEvent } from 'react'
 import Head from 'next/head'
 import styles from './styles.module.scss'
 import { canSSRAuth } from '../../utils/canSSRAuth'
-import { Header } from '../../components/Header'
+import { Sidebar } from '../../components/Header'
 import { FiDelete, FiUpload } from 'react-icons/fi'
 
 import { setUpAPIClient } from '../../services/api'
@@ -96,7 +96,7 @@ export default function Product({ categoryList }: CategoryProps) {
                 <title>Novo produto - Pizzaria</title>
             </Head>
             <div>
-                <Header />
+                <Sidebar />
 
                 <main className={styles.container}>
                     <h1>Novo Produto</h1>

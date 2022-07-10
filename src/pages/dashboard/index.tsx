@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import Head from 'next/head'
-import { Header } from '../../components/Header'
+import { Sidebar } from '../../components/Header'
 import styles from './styles.module.scss'
 import { FiRefreshCcw } from 'react-icons/fi'
 
@@ -95,7 +95,7 @@ export default function Dashboard({ orders }: HomeProps) {
                 <title>Painel - Pizzaria</title>
             </Head>
             <div>
-                <Header />
+                <Sidebar />
 
                 <main className={styles.container}>
                     <div className={styles.containerHeader}>
