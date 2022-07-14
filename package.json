@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "next dev"
+    "test": "npm run"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
