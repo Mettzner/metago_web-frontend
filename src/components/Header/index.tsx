@@ -3,9 +3,9 @@ import { AuthContext } from '../../contexts/AuthContext'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 
-import * as MdIcons from "react-icons/Md"
-import * as TbIcons from "react-icons/Tb"
-import * as CgIcons from "react-icons/Cg"
+import * as MdIcons from "react-icons/md"
+import * as TbIcons from "react-icons/tb"
+import * as CgIcons from "react-icons/cg"
 import * as IoIcons from "react-icons/io";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
