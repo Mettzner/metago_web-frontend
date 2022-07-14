@@ -8,7 +8,7 @@ type AuthContextData = {
     isAuthenticated: boolean;
     signIn: (credentials: SignInProps) => Promise<void>;
     signOut: () => void;
-    cadUsuario: (credentials: CadUsuarioProps) => Promise<void>
+    Usuario: (credentials: UsuarioProps) => Promise<void>
 }
 
 type UserProps = {
@@ -22,13 +22,7 @@ type SignInProps = {
     SENHA: string;
 }
 
-type CadUsuarioProps = {
-    NOME: string;
-    USUARIO: string;
-    SENHA: string;
-    NIVEL_ACESSO: string;
-}
-type CadClienteProps = {
+type UsuarioProps = {
     NOME: string;
     USUARIO: string;
     SENHA: string;
@@ -111,10 +105,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
     }
 
-    async function cadUsuario({ NOME, USUARIO, SENHA, NIVEL_ACESSO }: CadUsuarioProps) {
+    async function Usuario({ NOME, USUARIO, SENHA, NIVEL_ACESSO }: UsuarioProps) {
         try {
 
-            const response = await api.post('/cadusuario', {
+            const response = await api.post('/usuario', {
                 NOME,
                 USUARIO,
                 SENHA,
@@ -132,7 +126,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
 
     return (
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, cadUsuario }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, signOut, Usuario }}>
             {children}
         </AuthContext.Provider>
     )

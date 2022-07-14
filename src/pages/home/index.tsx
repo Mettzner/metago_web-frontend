@@ -18,7 +18,7 @@ export default function Principal() {
     return (
         <>
             <Head>
-                <title>Painel - Pizzaria</title>
+                <title>Home - Metago</title>
             </Head>
 
             <Sidebar />

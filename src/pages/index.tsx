@@ -45,8 +45,7 @@ export default function Home() {
           Metago - Login
         </title>
       </Head>
-      <div className={styles.mainLogin}>
-        <Image src={logoimg} alt="logo sujeito pizzaria" />
+      <div className={styles.main}>
         <div className={styles.login}>
           <form onSubmit={handleLogin}>
             <div className={styles.right}>

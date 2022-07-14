@@ -28,6 +28,10 @@ export default function EditCliente() {
 
     const [loading, setLoading] = useState(false)
 
+    async function voltar() {
+        event.preventDefault()
+        window.location.href = '/acesso_cliente'
+    }
     async function handleRegister(event: FormEvent) {
         event.preventDefault();
 
@@ -166,7 +170,7 @@ export default function EditCliente() {
                                 <div className={styles.btnExcluir}>
                                     <ButtonDelete40
                                         type="submit"
-                                        loading={loading}
+                                        onClick={() => voltar()}
                                     >
                                         Excluir
                                     </ButtonDelete40>

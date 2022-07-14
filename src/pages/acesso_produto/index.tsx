@@ -1,7 +1,7 @@
 import { useState, FormEvent, useEffect } from 'react'
 import Head from 'next/head'
 import { Sidebar } from '../../components/Header'
-import styles from './acesso_maquina.module.scss'
+import styles from './acesso_produto.module.scss'
 // import { setUpAPIClient } from '../../services/api'
 // import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
@@ -21,20 +21,20 @@ import Button from '@mui/material/Button';
 import TablePagination from '@mui/material/TablePagination';
 
 
-export default function AcessoMaquina() {
+export default function AcessoProduto() {
 
-    const [maquinas, setMaquinas] = useState([]);
+    const [produtos, setProdutos] = useState([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
 
 
     useEffect(() => {
-        async function loadMaquinas() {
-            const response = await api.get("/maquina/listagem")
+        async function loadProdutos() {
+            const response = await api.get("/produto/listagem")
             // console.log(response.data)
-            setMaquinas(response.data)
+            setProdutos(response.data)
         }
-        loadMaquinas();
+        loadProdutos();
     }, [])
 
     const handleChangePage = (event: unknown, newPage: number) => {
@@ -48,18 +48,18 @@ export default function AcessoMaquina() {
 
     async function chamaCadastro() {
         event.preventDefault()
-        window.location.href = '/maquina'
+        window.location.href = '/produto'
     }
 
-    async function handleDelete(ID_MAQUINA: string) {
+    async function handleDelete(ID_PRODUTO: string) {
         if (confirm("Deseja realmente excluir esta máquina?")) {
             var result = await api.delete('/maquina/delete', {
                 params: {
-                    ID_MAQUINA: ID_MAQUINA
+                    ID_PRODUTO: ID_PRODUTO
                 }
             })
             if (result.status === 200) {
-                window.location.href = '/acesso_maquina'
+                window.location.href = '/acesso_produto'
 
             } else {
                 alert('erro')
@@ -70,7 +70,7 @@ export default function AcessoMaquina() {
     return (
         <>
             <Head>
-                <title>Metago | Lista de Maquinas</title>
+                <title>Metago | Lista de produtos</title>
             </Head>
             <Sidebar />
             <div className={styles.container}>
@@ -89,16 +89,16 @@ export default function AcessoMaquina() {
                                             </TableRow>
                                         </TableHead>
                                         <TableBody >
-                                            {maquinas.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+                                            {produtos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                                                 <TableRow className={styles.row}
-                                                    key={row.ID_MAQUINA}>
+                                                    key={row.ID_produto}>
                                                     <TableCell component="th" scope="row">{row.CODIGO}</TableCell>
                                                     <TableCell>{row.DESCRICAO}</TableCell>
                                                     <TableCell>{new Date(row.DT_CADASTRO).toLocaleString('pt-br')}</TableCell>
                                                     <TableCell align='right'>
                                                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                                                            <Button className={styles.btnAlterar} href={'/maquina_editar/' + row.ID_MAQUINA}>Alterar</Button>
-                                                            <Button className={styles.btnExcluir} onClick={() => handleDelete(row.ID_MAQUINA)}>Excluir</Button>
+                                                            <Button className={styles.btnAlterar} href={'/produto_editar/' + row.ID_PRODUTO}>Alterar</Button>
+                                                            <Button className={styles.btnExcluir} onClick={() => handleDelete(row.ID_PRODUTO)}>Excluir</Button>
                                                         </ButtonGroup>
                                                     </TableCell>
                                                 </TableRow>
@@ -109,7 +109,7 @@ export default function AcessoMaquina() {
                                 <TablePagination className={styles.paginacao}
                                     rowsPerPageOptions={[10, 25, 100]}
                                     component="div"
-                                    count={maquinas.length}
+                                    count={produtos.length}
                                     rowsPerPage={rowsPerPage}
                                     page={page}
                                     onPageChange={handleChangePage}

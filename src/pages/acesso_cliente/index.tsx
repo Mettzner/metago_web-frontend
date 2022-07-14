@@ -84,7 +84,7 @@ export default function AcessoCliente() {
                         <div className={styles.card}>
                             <div className={styles.bodyTable}><Paper sx={{ width: '100%', overflow: 'hidden' }}>
                                 <TableContainer className={styles.tabela} component={Paper} sx={{ maxHeight: 600 }}>
-                                    <Table sx={{ minWidth: 650, color: 'white' }} size="small" className={styles.tabelaClientes} >
+                                    <Table sx={{ minWidth: 650, color: 'white' }} size="small" className={styles.tabela} >
                                         <TableHead >
                                             <TableRow className={styles.paginacao}>
                                                 <TableCell>CODIGO</TableCell>
@@ -93,7 +93,7 @@ export default function AcessoCliente() {
                                                 <TableCell>CIDADE</TableCell>
                                                 <TableCell>TELEFONE</TableCell>
                                                 <TableCell>DT_CADASTRO</TableCell>
-                                                <TableCell align='right'>OPÇÕES</TableCell>
+                                                <TableCell align='center'>OPÇÕES</TableCell>
                                             </TableRow>
                                         </TableHead>
                                         <TableBody >

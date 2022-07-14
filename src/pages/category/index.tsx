@@ -30,7 +30,7 @@ export default function Category() {
     return (
         <>
             <Head>
-                <title>Nova Categoria - Pizzaria</title>
+                <title>Nova Categoria - Metago</title>
             </Head>
             <div>
                 <Sidebar />

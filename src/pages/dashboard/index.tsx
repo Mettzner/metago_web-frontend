@@ -92,7 +92,7 @@ export default function Dashboard({ orders }: HomeProps) {
     return (
         <>
             <Head>
-                <title>Painel - Pizzaria</title>
+                <title>Painel - Metago</title>
             </Head>
             <div>
                 <Sidebar />

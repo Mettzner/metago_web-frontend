@@ -1,6 +1,6 @@
 import { useState, FormEvent, useContext } from 'react'
 import Head from 'next/head'
-import styles from '../../../styles/cadusuario.module.scss'
+import styles from './usuario.module.scss'
 import Image from 'next/image'
 import logoimg from '../../../public/logo.svg'
 import { Input } from '../../components/ui/Input'
@@ -12,8 +12,8 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 import { Sidebar } from '../../components/Header'
 
 
-export default function CadUsuario() {
-  const { cadUsuario } = useContext(AuthContext)
+export default function Usuario() {
+  const { Usuario } = useContext(AuthContext)
 
   const [NOME, setNome] = useState('')
   const [USUARIO, setUsuario] = useState('')
@@ -22,7 +22,7 @@ export default function CadUsuario() {
 
   const [loading, setLoading] = useState(false)
 
-  async function handleCadUsuario(event: FormEvent) {
+  async function handleUsuario(event: FormEvent) {
     event.preventDefault();
     console.log(NOME)
     console.log(USUARIO)
@@ -44,7 +44,7 @@ export default function CadUsuario() {
     }
     console.log(data)
 
-    await cadUsuario(data)
+    await Usuario(data)
 
     setLoading(false)
 
@@ -60,9 +60,8 @@ export default function CadUsuario() {
       <Sidebar />
 
       <div className={styles.container}>
-        <Image src={logoimg} alt="logo sujeito pizzaria" />
         <div className={styles.login}>
-          <form onSubmit={handleCadUsuario}>
+          <form onSubmit={handleUsuario}>
             <div className={styles.right}>
               <div className={styles.card}>
                 <h1>Cadastro</h1>

@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
 import { Sidebar } from '../../components/Header'
-import styles from './cadproduto.module.scss'
+import styles from './produto.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
@@ -11,7 +11,7 @@ import { ButtonPesquisa, ButtonDelete } from '../../components/ui/Button'
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
-export default function CadProduto() {
+export default function Produto() {
     const [DESCRICAO, setDescricao] = useState('')
     const [PRECO, setPreco] = useState('')
 
@@ -28,7 +28,7 @@ export default function CadProduto() {
         }
 
         const apiClient = setUpAPIClient();
-        const response = await apiClient.post('/cadproduto', {
+        const response = await apiClient.post('/produto', {
             DESCRICAO: DESCRICAO,
             PRECO: PRECO
         })

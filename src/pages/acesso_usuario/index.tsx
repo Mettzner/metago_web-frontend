@@ -48,7 +48,7 @@ export default function AcessoUsuario() {
 
     async function chamaCadastro() {
         event.preventDefault()
-        window.location.href = '/cadusuario/create'
+        window.location.href = '/usuario'
     }
 
     async function handleDelete(ID_USUARIO: string) {
