@@ -78,12 +78,16 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 USUARIO,
                 SENHA
             })
-            const { CODIGO, NOME, token } = response.data
+            const { CODIGO, NOME, token, NIVEL_ACESSO } = response.data
+            console.log(response.data)
             //está setando um cookie para gerenciar os acessos do usuário
             setCookie(undefined, '@nextauth.token', token, {
                 maxAge: 60 * 60 * 24 * 30,
                 path: "/" //Quais caminhos terão acesso ao cookie
             })
+
+            setCookie(undefined, '@nivel', NIVEL_ACESSO)
+
             //está inserido no cookie os dados do usuário que irão receber tratativas ao logar
             setUser({
                 CODIGO,

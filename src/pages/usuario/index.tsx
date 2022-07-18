@@ -92,9 +92,9 @@ export default function Usuario() {
 
                 <select value={NIVEL_ACESSO} onChange={(e) => setNivelAcesso(e.target.value)} className={styles.nivelAcesso}>
                   <option selected value="nivel"> Nivel do usuário </option>
-                  <option value="Usuário"> Usuário </option>
-                  <option value="Supervisor"> Supervisor </option>
-                  <option value="Administrador"> Administrador </option>
+                  <option value="1"> Usuário </option>
+                  <option value="2"> Supervisor </option>
+                  <option value="3"> Administrador </option>
                 </select>
 
                 <div className={styles.grupoBotao}>

@@ -1,7 +1,11 @@
-import { useContext, useState, useEffect } from 'react'
+import { useContext, createContext, ReactNode, useState, useEffect } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
+
+import { api } from '../../services/apiCliente'
+
+import { destroyCookie, setCookie, parseCookies } from 'nookies'
 
 import * as MdIcons from "react-icons/md"
 import * as TbIcons from "react-icons/tb"
@@ -19,6 +23,21 @@ import Button from '@mui/material/Button';
 export function Sidebar() {
   const { theme, setTheme } = useTheme()
   const currentTheme = theme
+
+  const cookies = parseCookies();
+
+  const nivel = cookies['@nivel']
+  const usuario = nivel === "1" ? <div id='usuario' className={styles.None}>
+    <MdIcons.MdManageAccounts size={30} color="#FFF" />
+    <Link href="/acesso_usuario">
+      <a>Cadastro de Usuário</a>
+    </Link>
+  </div> : <div id='usuario' className={styles.navText}>
+    <MdIcons.MdManageAccounts size={30} color="#FFF" />
+    <Link href="/acesso_usuario">
+      <a>Cadastro de Usuário</a>
+    </Link>
+  </div>
 
   function alteraTema() {
     if (currentTheme === 'dark') {
@@ -108,11 +127,8 @@ export function Sidebar() {
                   </Link>
                 </div>
 
-                <div className={styles.navText}>
-                  <MdIcons.MdManageAccounts size={30} color="#FFF" />
-                  <Link href="/acesso_usuario">
-                    <a>Cadastro de Usuário</a>
-                  </Link>
+                <div>
+                  {usuario}
                 </div>
 
               </div>

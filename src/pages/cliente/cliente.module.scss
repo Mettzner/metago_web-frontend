@@ -51,6 +51,37 @@
   justify-content: center;
 }
 
+.btnEmail {
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-top: 1.8rem;
+  height: 3.8rem;
+  width: 30%;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--black);
+  background: var(--blue-800);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--blue-800);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--blue-800);
+  }
+}
+
 .btnExcluir {
   width: 80%;
   margin-left: -1%;

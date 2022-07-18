@@ -108,7 +108,6 @@ export default function AcessoCliente() {
                                                     <TableCell>{new Date(row.DT_CADASTRO).toLocaleString('pt-br')}</TableCell>
                                                     <TableCell align='right'>
                                                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                                                            {/* <Button className={styles.btnAlterar} onClick={() => handleUpdate(row.ID_CLIENTE)}>Alterar</Button> */}
                                                             <Button className={styles.btnAlterar} href={'/cliente_editar/' + row.ID_CLIENTE}>Alterar</Button>
                                                             <Button className={styles.btnExcluir} onClick={() => handleDelete(row.ID_CLIENTE)}>Excluir</Button>
                                                         </ButtonGroup>

@@ -52,8 +52,8 @@ export default function AcessoProduto() {
     }
 
     async function handleDelete(ID_PRODUTO: string) {
-        if (confirm("Deseja realmente excluir esta máquina?")) {
-            var result = await api.delete('/maquina/delete', {
+        if (confirm("Deseja realmente excluir este produto?")) {
+            var result = await api.delete('/produto/delete', {
                 params: {
                     ID_PRODUTO: ID_PRODUTO
                 }

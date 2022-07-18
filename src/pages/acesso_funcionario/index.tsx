@@ -84,7 +84,7 @@ export default function AcessoFuncionario() {
                                                 <TableCell>CODIGO</TableCell>
                                                 <TableCell>NOME</TableCell>
                                                 <TableCell>DT_CADASTRO</TableCell>
-                                                <TableCell align='center'>OPÇÕES</TableCell>
+                                                <TableCell align='right'>OPÇÕES</TableCell>
                                             </TableRow>
                                         </TableHead>
                                         <TableBody >

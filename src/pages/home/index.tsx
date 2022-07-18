@@ -1,9 +1,10 @@
 import { canSSRAuth } from '../../utils/canSSRAuth'
 import Head from 'next/head'
+import Image from 'next/image'
 import { Sidebar } from '../../components/Header'
 import { Input } from '../../components/ui/Input'
 import { setUpAPIClient } from '../../services/api'
-
+import logoimg from '../../../public/nico.svg'
 import { Button } from '../../components/ui/Button'
 import styles from './home.module.scss'
 
@@ -24,7 +25,8 @@ export default function Principal() {
             <Sidebar />
 
             <div className={styles.container}>
-                <h1>HOME</h1>
+
+                <Image src={logoimg} alt="logo sujeito pizzaria" />
 
             </div>
         </>

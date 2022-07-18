@@ -1,6 +1,5 @@
-import React, { useState, FormEvent, useEffect } from 'react'
-import * as FaIcons from "react-icons/fa";
-import * as BsIcons from "react-icons/bs";
+import React, { useState, FormEvent, useEffect, useRef } from 'react'
+import emailjs from "@emailjs/browser";
 import Head from 'next/head'
 import { Sidebar } from '../../components/Header'
 import styles from './cliente.module.scss'
@@ -10,6 +9,7 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 import { api } from '../../services/apiCliente'
 import { Input20, Input80, Input50, Input100 } from '../../components/ui/Input'
 import { Button40, ButtonDelete40, ButtonPesquisa } from '../../components/ui/Button'
+import Button from '@mui/material/Button';
 
 export default function EditCliente() {
     const [NOME, setNome] = useState('')
@@ -31,6 +31,28 @@ export default function EditCliente() {
         event.preventDefault()
         window.location.href = '/acesso_cliente'
     }
+
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                "emailceduptcc",
+                "template_yvbaaxt",
+                form.current,
+                "jbN-LjC96qSWJbuK8"
+            )
+            .then(
+                (result) => {
+                    alert("mensagem enviada");
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+    };
+
     async function handleRegister(event: FormEvent) {
         event.preventDefault();
 
@@ -174,6 +196,7 @@ export default function EditCliente() {
                                         Voltar
                                     </ButtonDelete40>
                                 </div>
+                                <Button onClick={sendEmail} className={styles.btnEmail}>Email</Button>
                                 <div className={styles.btnCadastrar}>
                                     <Button40
                                         type="submit"

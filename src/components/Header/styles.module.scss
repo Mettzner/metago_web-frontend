@@ -81,6 +81,33 @@
   }
 }
 
+.None {
+  display: none;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+
+  a {
+    text-decoration: none;
+    color: var(--gray-50);
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+  }
+
+  a:hover {
+    transition: 0.5s;
+    background-color: var(--green-300);
+    width: 150%;
+  }
+}
+
 .navbarToggle {
   margin: auto;
   padding: auto;
