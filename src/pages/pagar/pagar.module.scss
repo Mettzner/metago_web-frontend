@@ -53,7 +53,7 @@
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 0.3rem;
-  color: var(--dark-1000);
+  color: var(--preto);
   background: var(--green-300);
   cursor: pointer;
   box-shadow: 0px 5px 40px -20px var(--green-300);
@@ -72,7 +72,7 @@
   }
 }
 
-.btnExcluir {
+.btnVoltar {
   margin-left: 1.5%;
   margin-top: 1rem;
   height: 3.8rem;
@@ -83,7 +83,7 @@
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 0.3rem;
-  color: var(--dark-1000);
+  color: var(--preto);
   background: var(--red-400);
   cursor: pointer;
   box-shadow: 0px 5px 40px -20px var(--red-400);

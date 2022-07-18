@@ -91,12 +91,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 USUARIO,
             })
 
-            //passar para próximas requisições o token
+            //passar o token para próximas requisições
             api.defaults.headers['Authorization'] = `Bearer ${token}`
 
             toast.success("Logado com sucesso")
 
-            //Redirecionar o usar para /principal
+            //Redirecionar o usuario para /home
             Router.push('/home')
 
         } catch (err) {

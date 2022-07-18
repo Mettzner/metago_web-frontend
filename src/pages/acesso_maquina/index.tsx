@@ -70,7 +70,7 @@ export default function AcessoMaquina() {
     return (
         <>
             <Head>
-                <title>Metago | Lista de Maquinas</title>
+                <title> Metago | Lista de Máquinas </title>
             </Head>
             <Sidebar />
             <div className={styles.container}>

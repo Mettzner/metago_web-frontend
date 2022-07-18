@@ -1,18 +1,21 @@
 import { useState, FormEvent, useContext } from 'react'
 import Head from 'next/head'
 import styles from './usuario.module.scss'
-import Image from 'next/image'
-import logoimg from '../../../public/logo.svg'
 import { Input } from '../../components/ui/Input'
-import { Button } from '../../components/ui/Button'
 import { AuthContext } from '../../contexts/AuthContext'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
 
 import { Sidebar } from '../../components/Header'
 
+import Button from '@mui/material/Button';
 
 export default function Usuario() {
+  async function voltar() {
+    event.preventDefault()
+    window.location.href = '/acesso_usuario'
+  }
+
   const { Usuario } = useContext(AuthContext)
 
   const [NOME, setNome] = useState('')
@@ -64,7 +67,7 @@ export default function Usuario() {
           <form onSubmit={handleUsuario}>
             <div className={styles.right}>
               <div className={styles.card}>
-                <h1>Cadastro</h1>
+                <h1>Cadastro de Usuário</h1>
 
                 <Input
                   placeholder="Nome"
@@ -94,12 +97,11 @@ export default function Usuario() {
                   <option value="Administrador"> Administrador </option>
                 </select>
 
-                <Button
-                  type="submit"
-                  loading={loading}
-                >
-                  Cadastrar
-                </Button>
+                <div className={styles.grupoBotao}>
+                  <Button className={styles.btnVoltar} type="submit"
+                    onClick={() => voltar()}>Voltar</Button>
+                  <Button onClick={handleUsuario} className={styles.btnCadastrar}>Cadastrar</Button>
+                </div>
 
               </div>
             </div>

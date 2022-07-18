@@ -84,7 +84,9 @@ export default function AcessoUsuario() {
                                             <TableRow className={styles.paginacao}>
                                                 <TableCell>CODIGO</TableCell>
                                                 <TableCell>NOME</TableCell>
-                                                <TableCell>CPF/CNPJ</TableCell>
+                                                <TableCell>USUARIO</TableCell>
+                                                <TableCell>NIVEL_ACESSO</TableCell>
+                                                <TableCell>DT_CADASTRO</TableCell>
                                                 <TableCell align='right'>OPÇÕES</TableCell>
                                             </TableRow>
                                         </TableHead>

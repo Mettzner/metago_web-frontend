@@ -9,6 +9,7 @@ export function setUpAPIClient(ctx = undefined) {
 
     const api = axios.create({
         baseURL: 'http://localhost:3333',
+        // baseURL: 'https://metagoweb.herokuapp.com/',
         headers: {
             Authorization: `Bearer ${cookies['@nextauth.token']}`
         }

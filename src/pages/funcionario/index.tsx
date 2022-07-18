@@ -11,6 +11,11 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function Funcionario() {
+    async function voltar() {
+        event.preventDefault()
+        window.location.href = '/acesso_funcionario'
+    }
+
     const [NOME, setNome] = useState('')
 
     const [loading, setLoading] = useState(false)
@@ -23,7 +28,7 @@ export default function Funcionario() {
         }
 
         const apiClient = setUpAPIClient();
-        const response = await apiClient.post('/funcionario', {
+        const response = await apiClient.post('/funcionario/create', {
             NOME: NOME
         })
         if (response.status != 200) {
@@ -37,32 +42,31 @@ export default function Funcionario() {
     return (
         <>
             <Head>
-                <title>Novo Funcionário - Metago</title>
+                <title> Metago - Novo Funcionário </title>
             </Head>
             <Sidebar />
             <div>
                 <div className={styles.container}>
-                    <form onSubmit={handleRegister}>
-                        <div className={styles.right}>
-                            <div className={styles.card}>
-                                <h1>Cadastro de Funcionários</h1>
+                    <div className={styles.right}>
+                        <div className={styles.card}>
+                            <h1>Cadastro de Funcionários</h1>
 
-                                <Input
-                                    placeholder="Nome"
-                                    type="text"
-                                    value={NOME}
-                                    onChange={(e) => setNome(e.target.value)}
-                                />
+                            <Input
+                                placeholder="Nome"
+                                type="text"
+                                value={NOME}
+                                onChange={(e) => setNome(e.target.value)}
+                            />
 
-                                <div className={styles.grupoBotao}>
-                                    <Button className={styles.btnExcluir}>Excluir</Button>
-                                    <Button className={styles.btnCadastrar}>Cadastrar</Button>
-                                </div>
-
-
+                            <div className={styles.grupoBotao}>
+                                <Button className={styles.btnVoltar}
+                                    type="submit"
+                                    onClick={() => voltar()}
+                                >Voltar</Button>
+                                <Button onClick={handleRegister} className={styles.btnCadastrar}>Cadastrar</Button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </>

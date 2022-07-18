@@ -9,16 +9,20 @@ import { Input, Input20, Input40, Input90, Input80 } from '../../components/ui/I
 import { ButtonPesquisa, ButtonDelete } from '../../components/ui/Button'
 
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function Produto() {
+    async function voltar() {
+        event.preventDefault()
+        window.location.href = '/acesso_produto'
+    }
+
     const [DESCRICAO, setDescricao] = useState('')
     const [PRECO, setPreco] = useState('')
 
     const [loading, setLoading] = useState(false)
 
-    async function handleRegister(event: FormEvent) {
-        event.preventDefault();
+    async function handleRegister() {
+        // event.preventDefault();
 
         if (DESCRICAO === "") {
             return;
@@ -28,7 +32,7 @@ export default function Produto() {
         }
 
         const apiClient = setUpAPIClient();
-        const response = await apiClient.post('/produto', {
+        const response = await apiClient.post('/produto/create', {
             DESCRICAO: DESCRICAO,
             PRECO: PRECO
         })
@@ -43,37 +47,38 @@ export default function Produto() {
     return (
         <>
             <Head>
-                <title>Novo Produto - Metago</title>
+                <title> Metago - Novo Produto </title>
             </Head>
             <Sidebar />
             <div className={styles.container}>
-                <form onSubmit={handleRegister}>
-                    <div className={styles.right}>
-                        <div className={styles.card}>
-                            <h1>Cadastro de Produto</h1>
-                            <div className={styles.grupoBotao}>
-                                <Input90
-                                    placeholder="Descrição"
-                                    type="text"
-                                    value={DESCRICAO}
-                                    onChange={(e) => setDescricao(e.target.value)}
-                                />
+                <div className={styles.right}>
+                    <div className={styles.card}>
+                        <h1>Cadastro de Produto</h1>
+                        <div className={styles.grupoBotao}>
+                            <Input90
+                                placeholder="Descrição"
+                                type="text"
+                                value={DESCRICAO}
+                                onChange={(e) => setDescricao(e.target.value)}
+                            />
 
-                                <Input20
-                                    placeholder="Preço"
-                                    type="text"
-                                    value={PRECO}
-                                    onChange={(e) => setPreco(e.target.value)}
-                                />
-                            </div>
+                            <Input20
+                                placeholder="Preço"
+                                type="text"
+                                value={PRECO}
+                                onChange={(e) => setPreco(e.target.value)}
+                            />
+                        </div>
 
-                            <div className={styles.grupoBotao}>
-                                <Button className={styles.btnExcluir}>Excluir</Button>
-                                <Button className={styles.btnCadastrar}>Cadastrar</Button>
-                            </div>
+                        <div className={styles.grupoBotao}>
+                            <Button className={styles.btnVoltar}
+                                type="submit"
+                                onClick={() => voltar()}>Voltar</Button>
+                            <Button className={styles.btnCadastrar}
+                                onClick={handleRegister}>Cadastrar</Button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div >
         </>
     )

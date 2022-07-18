@@ -15,6 +15,10 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function Pagar() {
+    async function voltar() {
+        event.preventDefault()
+        window.location.href = '/acesso_pagar'
+    }
     const [ID_CLIENTE, setIdCliente] = useState('')
     const [ID_FUNCIONARIO, setIdFuncionario] = useState('')
     const [VALOR_TOTAL, setValorTotal] = useState('')
@@ -43,7 +47,7 @@ export default function Pagar() {
     return (
         <>
             <Head>
-                <title>Contas a pagar - Metago</title>
+                <title> Metago - Contas a pagar</title>
             </Head>
             <Sidebar />
             <div className={styles.container}>
@@ -52,28 +56,12 @@ export default function Pagar() {
                         <div className={styles.card}>
                             <h1>Contas a Pagar</h1>
                             <div className={styles.elemento}>
-                                {/* 
-                                    <Input20
-                                        placeholder="Cliente"
-                                        type="text"
-                                        value={DESCRICAO}
-                                        onChange={(e) => setDescricao(e.target.value)}
-                                    /> */}
-                                {/* <ButtonPesquisa></ButtonPesquisa> */}
-
                                 <Input100
                                     placeholder="Cliente"
                                     type="text"
                                     value={ID_CLIENTE}
                                     onChange={(e) => setIdCliente(e.target.value)}
                                 />
-                                {/* <Input20
-                                        placeholder="Funcionário"
-                                        type="text"
-                                        value={DESCRICAO}
-                                        onChange={(e) => setDescricao(e.target.value)}
-                                    />
-                                    <ButtonPesquisa></ButtonPesquisa> */}
                                 <Input100
                                     placeholder="Funcionário"
                                     type="text"
@@ -95,7 +83,8 @@ export default function Pagar() {
                             </div>
 
                             <div className={styles.grupoBotao}>
-                                <Button className={styles.btnExcluir}>Excluir</Button>
+                                <Button className={styles.btnVoltar} type="submit"
+                                    onClick={() => voltar()}>Voltar</Button>
                                 <Button onClick={handleRegister} className={styles.btnCadastrar}>Cadastrar</Button>
                             </div>
                         </div>

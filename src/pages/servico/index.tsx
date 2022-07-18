@@ -1,11 +1,11 @@
 import { useState, FormEvent } from 'react'
 import Head from 'next/head'
 import { Sidebar } from '../../components/Header'
-import styles from './cadservico.module.scss'
+import styles from './servico.module.scss'
 import { setUpAPIClient } from '../../services/api'
 import { toast } from 'react-toastify'
 import { canSSRAuth } from '../../utils/canSSRAuth'
-import { Input10, Input20, Input40, Input30, Input50, Input60, Input70, Input80, Input100 } from '../../components/ui/Input'
+import { Input10, Input20, Input40, Input50, Input70, Input80, Input100 } from '../../components/ui/Input'
 import { ButtonPesquisa } from '../../components/ui/Button'
 
 import Box from '@mui/material/Box';
@@ -15,6 +15,11 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function Servico() {
+    async function voltar() {
+        event.preventDefault()
+        window.location.href = '/acesso_servico'
+    }
+
     const [DESCRICAO, setDescricao] = useState('')
 
     const [loading, setLoading] = useState(false)
@@ -38,7 +43,7 @@ export default function Servico() {
     return (
         <>
             <Head>
-                <title>Novo Serviço - Metago</title>
+                <title> Metago - Novo Serviço </title>
             </Head>
             <Sidebar />
             <div className={styles.container}>
@@ -113,7 +118,8 @@ export default function Servico() {
                             </div>
 
                             <div className={styles.grupoBotao}>
-                                <Button className={styles.btnExcluir}>Excluir</Button>
+                                <Button className={styles.btnVoltar} type="submit"
+                                    onClick={() => voltar()}>Voltar</Button>
                                 <Button className={styles.btnCadastrar}>Cadastrar</Button>
                             </div>
 

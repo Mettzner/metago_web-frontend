@@ -10,7 +10,6 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 import { api } from '../../services/apiCliente'
 import { Input20, Input80, Input50, Input100 } from '../../components/ui/Input'
 import { Button40, ButtonDelete40, ButtonPesquisa } from '../../components/ui/Button'
-import { useParams } from 'react-router-dom'
 
 export default function EditCliente() {
     const [NOME, setNome] = useState('')
@@ -172,7 +171,7 @@ export default function EditCliente() {
                                         type="submit"
                                         onClick={() => voltar()}
                                     >
-                                        Excluir
+                                        Voltar
                                     </ButtonDelete40>
                                 </div>
                                 <div className={styles.btnCadastrar}>

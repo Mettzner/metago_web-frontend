@@ -47,7 +47,7 @@ export default function AcessoFuncionario() {
 
     async function chamaCadastro() {
         event.preventDefault()
-        window.location.href = '/funcionario/create'
+        window.location.href = '/funcionario'
     }
 
     async function handleDelete(ID_FUNCIONARIO: string) {
@@ -69,12 +69,12 @@ export default function AcessoFuncionario() {
     return (
         <>
             <Head>
-                <title>Metago | Lista de Funcionarios</title>
+                <title>Metago | Lista de Funcionários</title>
             </Head>
             <Sidebar />
             <div className={styles.container}>
                 <form >
-                    <div className={styles.righta}>
+                    <div className={styles.right}>
                         <div className={styles.card}>
                             <div className={styles.bodyTable}><Paper sx={{ width: '100%', overflow: 'hidden' }}>
                                 <TableContainer className={styles.tabela} component={Paper} sx={{ maxHeight: 600 }}>
