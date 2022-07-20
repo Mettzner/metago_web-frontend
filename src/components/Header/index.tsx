@@ -117,7 +117,7 @@ export function Sidebar() {
                 <div className={styles.navText}>
                   <CgIcons.CgFileRemove size={32} color="#FFF" />
                   <Link href="/acesso_pagar">
-                    <a>Conta a Pagar</a>
+                    <a>Contas a Pagar</a>
                   </Link>
                 </div>
                 <div className={styles.navText}>

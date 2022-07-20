@@ -10,8 +10,6 @@ import Modal from 'react-modal'
 
 
 export default function Principal() {
-    const fill = 'rgb(134, 65, 244)'
-    const data = [50, 10, 40, 95, -4, -24, null, 85, undefined, 0, 35, 53, -53, 24, 50, -20, -80]
 
     Modal.setAppElement('#__next')
 
@@ -24,6 +22,7 @@ export default function Principal() {
             <Sidebar />
 
             <div className={styles.container}>
+                <h1>HOME</h1>
             </div>
         </>
     )

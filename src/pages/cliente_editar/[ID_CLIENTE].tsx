@@ -115,7 +115,7 @@ export default function Cliente() {
                                 <Input100
                                     placeholder="Nome"
                                     type="text"
-                                    value={(NOME).toUpperCase()}
+                                    value={NOME}
                                     onChange={(e) => setNome(e.target.value.toUpperCase())}
 
                                 />
@@ -124,13 +124,13 @@ export default function Cliente() {
                                     <Input50
                                         placeholder="CPF/CNPJ"
                                         type="text"
-                                        value={(CNPJ).toUpperCase()}
+                                        value={CNPJ}
                                         onChange={(e) => setCNPJ(e.target.value.toUpperCase())}
                                     />
                                     <Input50
                                         placeholder="Telefone"
                                         type="text"
-                                        value={(TELEFONE).toUpperCase()}
+                                        value={TELEFONE}
                                         onChange={(e) => setTelefone(e.target.value.toUpperCase())}
                                     />
                                 </div>
@@ -143,51 +143,51 @@ export default function Cliente() {
                                 <Input80
                                     placeholder="Endereço"
                                     type="text"
-                                    value={(ENDERECO).toUpperCase()}
+                                    value={ENDERECO}
                                     onChange={(e) => setEndereco(e.target.value.toUpperCase())}
                                 />
                                 <Input20
                                     placeholder="CEP"
                                     type="text"
-                                    value={(CEP).toUpperCase()}
+                                    value={CEP}
                                     onChange={(e) => setCEP(e.target.value.toUpperCase())}
                                 />
                                 <div className={styles.margin}>
                                     <Input20
                                         placeholder="Numero"
                                         type="text"
-                                        value={(NUMERO).toUpperCase()}
+                                        value={NUMERO}
                                         onChange={(e) => setNumero(e.target.value.toUpperCase())}
                                     />
                                     <Input20
                                         placeholder="Bairro"
                                         type="text"
-                                        value={(BAIRRO).toUpperCase()}
+                                        value={BAIRRO}
                                         onChange={(e) => setBairro(e.target.value.toUpperCase())}
                                     />
                                     <Input20
                                         placeholder="Cidade"
                                         type="text"
-                                        value={(CIDADE).toUpperCase()}
+                                        value={CIDADE}
                                         onChange={(e) => setCidade(e.target.value.toUpperCase())}
                                     />
                                     <Input20
                                         placeholder="UF"
                                         type="text"
-                                        value={(UF).toUpperCase()}
+                                        value={UF}
                                         onChange={(e) => setUF(e.target.value.toUpperCase())}
                                     />
                                 </div>
                                 <Input80
                                     placeholder="Complemento"
                                     type="text"
-                                    value={(COMPLEMENTO).toUpperCase()}
+                                    value={COMPLEMENTO}
                                     onChange={(e) => setComplemento(e.target.value.toUpperCase())}
                                 />
                                 <Input20
                                     placeholder="Pais"
                                     type="text"
-                                    value={(PAIS).toUpperCase()}
+                                    value={PAIS}
                                     onChange={(e) => setPais(e.target.value.toUpperCase())}
                                 />
                             </div>
