@@ -1,14 +1,13 @@
+"use client"
+
 import Head from 'next/head'
-import styles from '../../styles/login.module.scss'
-import Image from 'next/image'
-import logoimg from '../../public/logo.svg'
-import { Input } from '../components/ui/Input'
-import { Button } from '../components/ui/Button'
+import { Input } from '../_components/ui/input'
+import { Button } from '../_components/ui/button'
 import { useContext, FormEvent, useState } from 'react'
 import { AuthContext } from '../_contexts/AuthContext'
 import { toast } from 'react-toastify'
 
-// import { canSSRGuest } from '../utils/canSSRGuest'
+import { canSSRGuest } from '../_utils/canSSRGuest'
 
 export default function Home() {
   const { signIn } = useContext(AuthContext)
@@ -45,11 +44,11 @@ export default function Home() {
           Metago - Login
         </title>
       </Head>
-      <div className={styles.main}>
-        <div className={styles.login}>
+      <div className="">
+        <div className="">
           <form onSubmit={handleLogin}>
-            <div className={styles.right}>
-              <div className={styles.card}>
+            <div className="">
+              <div className="">
                 <h1>Login</h1>
                 <Input
                   placeholder="Usuário"
@@ -67,7 +66,7 @@ export default function Home() {
 
                 <Button
                   type="submit"
-                  loading={loading}
+                  // loading={loading}
                 >
                   Acessar
                 </Button>
@@ -81,8 +80,8 @@ export default function Home() {
 }
 
 
-// export const getServerSideProps = canSSRGuest(async (ctx) => {
-//   return {
-//     props: {}
-//   }
-// })
+export const getServerSideProps = canSSRGuest(async (ctx) => {
+  return {
+    props: {}
+  }
+})

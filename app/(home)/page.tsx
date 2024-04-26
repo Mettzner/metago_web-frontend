@@ -1,10 +1,10 @@
 import React from 'react'
-// import { canSSRAuth } from '../_utils/canSSRAuth'
+import { canSSRAuth } from '../_utils/canSSRAuth'
 import { setUpAPIClient } from '../_services/api'
 import Header from '../_components/header'
+import Modal from 'react-modal'
 
 export default function Principal() {
-    // Modal.setAppElement('#__next')
 
     return (
         <div>
@@ -13,9 +13,8 @@ export default function Principal() {
     )
 }
 
-// export const getServerSideProps = canSSRAuth(async (ctx) => {
-//     const apiClient = setUpAPIClient(ctx);
-
+// export const getServerSideProps = canSSRAuth(async () => {
+//     const apiClient = setUpAPIClient();
 
 //     return {
 //         props: {}

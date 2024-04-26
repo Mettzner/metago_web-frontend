@@ -66,22 +66,9 @@ export function Sidebar() {
 
   return (
     <>
-      <Card>
-        <CardContent className="p-5 justify-between items-center flex flex-row">
-          {/* <Image src="/Logo.png" alt="MetaGo Barber Logo" height={22} width={120} /> */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="h-8 w-8">
-                <MenuIcon size={18} />
-              </Button>
-            </SheetTrigger>
-
-            <SheetContent className="p-0">
-              <SideMenu />
-            </SheetContent>
-          </Sheet>
-        </CardContent>
-      </Card>
+      <SheetHeader className="text-left border-b border-solid border-secondary p-5">
+        <SheetTitle>Menu</SheetTitle>
+      </SheetHeader>
       {/* <form>
         <IconContext.Provider value={{ color: "#fff" }}>
           <div className={styles.navBar}>
