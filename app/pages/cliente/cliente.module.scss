@@ -1,0 +1,98 @@
+// #__next {
+//   margin: 0;
+//   font-family: "Noto Sans", sans-serif;
+// }
+
+// #__next * {
+//   box-sizing: border-box;
+// }
+
+// .container {
+//   width: 100vw;
+//   height: 100vh;
+//   background: var(--dark-1000);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
+
+// .right {
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .card {
+//   width: 45%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   padding: 30px 35px;
+//   background: var(--dark-500);
+//   border-radius: 20px;
+//   box-shadow: 0px 10px 40px var(--black);
+
+//   h1 {
+//     color: var(--green-300);
+//     font-weight: 800;
+//     margin: 0;
+//   }
+// }
+
+// .elemento2 {
+//   width: 100%;
+//   display: flex;
+//   text-align: center;
+//   flex-direction: row;
+//   justify-content: center;
+// }
+
+// .btnEmail {
+//   margin-right: 1%;
+//   margin-left: 1%;
+//   margin-top: 1.8rem;
+//   height: 3.8rem;
+//   width: 30%;
+//   border: 0;
+//   border-radius: 0.5rem;
+//   outline: none;
+//   text-transform: uppercase;
+//   font-weight: 800;
+//   letter-spacing: 0.3rem;
+//   color: var(--black);
+//   background: var(--blue-800);
+//   cursor: pointer;
+//   box-shadow: 0px 5px 40px -20px var(--blue-800);
+
+//   &[disabled] {
+//     cursor: not-allowed;
+
+//     svg {
+//       animation: animate 2s infinite;
+//     }
+//   }
+
+//   &:hover {
+//     filter: brightness(1.2);
+//     background: var(--blue-800);
+//   }
+// }
+
+// .btnExcluir {
+//   width: 80%;
+//   margin-left: -1%;
+// }
+
+// .btnCadastrar {
+//   width: 80%;
+//   margin-right: -1%;
+// }
+
+// .margin {
+//   margin-left: 2%;
+//   margin-right: -2%;
+// }
