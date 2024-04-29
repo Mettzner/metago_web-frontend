@@ -1,6 +1,7 @@
+
 import { useContext, createContext, ReactNode, useState, useEffect } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
-import Link from 'next/link'
+// import LiAnk from 'next/liAnk'
 import { useTheme } from 'next-themes'
 
 import { api } from '../../services/apiCliente'
@@ -29,14 +30,14 @@ export function Sidebar() {
   const nivel = cookies['@nivel']
   const usuario = nivel === "1" ? <div id='usuario' className={styles.None}>
     <MdIcons.MdManageAccounts size={30} color="#FFF" />
-    <Link href="/acesso_usuario">
+    <a href="/acesso_usuario">
       <a>Cadastro de Usuário</a>
-    </Link>
+    </a>
   </div> : <div id='usuario' className={styles.navText}>
     <MdIcons.MdManageAccounts size={30} color="#FFF" />
-    <Link href="/acesso_usuario">
+    <a href="/acesso_usuario">
       <a>Cadastro de Usuário</a>
-    </Link>
+    </a>
   </div>
 
   function alteraTema() {
@@ -60,18 +61,18 @@ export function Sidebar() {
         <IconContext.Provider value={{ color: "#fff" }}>
           <div className={styles.navBar}>
             <div className={styles.menuBars}>
-              <Link href='#'>
+              <a href='#'>
                 <FaIcons.FaBars onClick={showSidebar} />
-              </Link>
+              </a>
             </div>
           </div>
 
           <nav className={sidebar ? styles.navMenuActive : styles.navMenu} onClick={showSidebar}>
             <ul className={styles.navMenuItems}>
               <li className={styles.navbarToggle}>
-                <Link href="/home">
+                <a href="/home">
                   <></>
-                </Link>
+                </a>
               </li>
 
               <div className={styles.groupText}>
@@ -82,49 +83,49 @@ export function Sidebar() {
                 </div>
                 <div className={styles.navText}>
                   <IoIcons.IoMdPeople size={30} color="#FFF" />
-                  <Link href="/acesso_cliente">
+                  <a href="/acesso_cliente">
                     <a>Cadastro de Cliente</a>
-                  </Link>
+                  </a>
                 </div>
 
                 <div className={styles.navText}>
                   <CgIcons.CgMenuBoxed size={30} color="#FFF" />
-                  <Link href="/acesso_servico">
+                  <a href="/acesso_servico">
                     <a>Cadastro de Serviços</a>
-                  </Link>
+                  </a>
                 </div>
 
                 <div className={styles.navText}>
                   <TbIcons.TbTractor size={30} className={styles.Icones} />
-                  <Link href="/acesso_maquina">
+                  <a href="/acesso_maquina">
                     <a>Cadastro de Maquina</a>
-                  </Link>
+                  </a>
                 </div>
 
                 <div className={styles.navText}>
                   <BsIcons.BsFillPersonPlusFill size={30} color="#FFF" />
-                  <Link href="/acesso_funcionario">
+                  <a href="/acesso_funcionario">
                     <a>Cadastro de Funcionario</a>
-                  </Link>
+                  </a>
                 </div>
 
                 <div className={styles.navText}>
                   <CgIcons.CgBox size={28} color="#FFF" />
-                  <Link href="/acesso_produto">
+                  <a href="/acesso_produto">
                     <a>Cadastro de Produto</a>
-                  </Link>
+                  </a>
                 </div>
                 <div className={styles.navText}>
                   <CgIcons.CgFileRemove size={32} color="#FFF" />
-                  <Link href="/acesso_pagar">
+                  <a href="/acesso_pagar">
                     <a>Contas a Pagar</a>
-                  </Link>
+                  </a>
                 </div>
                 <div className={styles.navText}>
                   <CgIcons.CgFileAdd size={32} color="#FFF" />
-                  <Link href="/acesso_receber">
+                  <a href="/acesso_receber">
                     <a>Contas a Receber</a>
-                  </Link>
+                  </a>
                 </div>
 
                 <div>

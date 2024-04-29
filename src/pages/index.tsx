@@ -1,3 +1,5 @@
+"use client"
+
 import Head from 'next/head'
 import styles from '../../styles/login.module.scss'
 import Image from 'next/image'

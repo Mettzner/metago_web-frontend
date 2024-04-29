@@ -21,7 +21,8 @@ export default function Principal() {
 
             <Sidebar />
 
-            <div className={styles.container}>
+            <div className="d-flex w-full h-full justify-center items-center flex-col bg-[#201b2c]">
+                {/* <div className={styles.container}> */}
                 <h1>HOME</h1>
             </div>
         </>
