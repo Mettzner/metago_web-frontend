@@ -1,37 +1,37 @@
-import { GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
-import { parseCookies, destroyCookie } from 'nookies'
-import { AuthTokenError } from '../_services/erros/AuthTokenError'
+// import { GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
+// import { parseCookies, destroyCookie } from 'nookies'
+// import { AuthTokenError } from '../services/erros/AuthTokenError'
 
-//Função para páginas que só usuarios logados terão acesso.
+// //Função para páginas que só usuarios logados terão acesso.
 
-export function canSSRAuth<P>(fn: GetServerSideProps<P>) {
-    return async (ctx: GetServerSidePropsContext): Promise<GetServerSidePropsResult<P>> => {
-        const cookies = parseCookies(ctx);
+// export function canSSRAuth<P>(fn: GetServerSideProps<P>) {
+//     return async (ctx: GetServerSidePropsContext): Promise<GetServerSidePropsResult<P>> => {
+//         const cookies = parseCookies(ctx);
 
-        const token = cookies['@nextauth.token']
+//         const token = cookies['@nextauth.token']
 
-        if (!token) {
-            return {
-                redirect: {
-                    destination: '/',
-                    permanent: false,
-                }
-            }
-        }
+//         if (!token) {
+//             return {
+//                 redirect: {
+//                     destination: '/',
+//                     permanent: false,
+//                 }
+//             }
+//         }
 
-        try {
-            return await fn(ctx)
-        } catch (err) {
-            if (err instanceof AuthTokenError)
-                destroyCookie(ctx, '@nextauth.token');
+//         try {
+//             return await fn(ctx)
+//         } catch (err) {
+//             if (err instanceof AuthTokenError)
+//                 destroyCookie(ctx, '@nextauth.token');
 
-            return {
-                redirect: {
-                    destination: '/',
-                    permanent: false
-                }
-            }
-        }
+//             return {
+//                 redirect: {
+//                     destination: '/',
+//                     permanent: false
+//                 }
+//             }
+//         }
 
-    }
-}
+//     }
+// }

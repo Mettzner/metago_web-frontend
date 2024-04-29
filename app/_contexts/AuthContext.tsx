@@ -1,12 +1,10 @@
-"use client"
-
 import { createContext, ReactNode, useState, useEffect } from 'react'
 import { api } from '../_services/apiCliente'
 import { destroyCookie, setCookie, parseCookies } from 'nookies'
 import Router from 'next/router'
 import { toast } from 'react-toastify'
 type AuthContextData = {
-    user: UserProps | undefined;
+    user: UserProps;
     isAuthenticated: boolean;
     signIn: (credentials: SignInProps) => Promise<void>;
     signOut: () => void;
@@ -103,7 +101,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             toast.success("Logado com sucesso")
 
             //Redirecionar o usuario para /home
-            Router.push('/')
+            Router.push('/home')
 
         } catch (err) {
             console.log(err)
