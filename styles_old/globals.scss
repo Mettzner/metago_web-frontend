@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+#__next {
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  size: 20px;
+}
+
+#__next * {
+  box-sizing: border-box;
+}
+
+.MuiTableCell-root {
+  color: var(--dark-white) !important;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: var(--dark-1000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --preto: #000;
+
+  --dark-1000: #69676e;
+  --dark-900: #525252;
+  --dark-800: #777777;
+  --dark-750: #282138;
+  --dark-700: #5f5f5f;
+  --dark-500: #999999;
+  --dark-400: #797979;
+  --dark-300: #b4b4b4;
+
+  --gray-50: #000000de;
+  --gray-100: #8a8a8a;
+
+  --green-700: #00ff8052;
+  --green-400: #00b661;
+  --green-300: #1a7448;
+  --green-200: #45aa63;
+  --green-100: #3fffb3;
+
+  --red-800: #8a1616;
+  --red-400: #af2929;
+
+  --blue-800: #3471cc;
+
+  --purple-600: #442e7e;
+
+  --dark-white: #09051bde;
+  --theme-switcher: #09051bde;
+}
+
+[data-theme="dark"] {
+  --white: #fff;
+  --black: #000;
+  --preto: #000;
+
+  --dark-1000: #201b2c;
+  --dark-900: #101026;
+  --dark-800: #282138;
+  --dark-700: #1d1d2e;
+  --dark-500: #2f2841;
+  --dark-300: #514869;
+
+  --gray-50: #f0ffffde;
+  --gray-100: #8a8a8a;
+
+  --green-700: #00ff8052;
+  --green-400: #00b661;
+  --green-300: #00ff88;
+  --green-100: #3fffb3;
+
+  --red-800: #8a1616;
+  --red-400: #ff2f2f;
+
+  --blue-800: #3471cc;
+
+  --purple-600: #442e7e;
+
+  --dark-white: #ffffffde;
+  --theme-switcher: #c7a900de;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background: var(--dark-700);
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font: 400 1rem sans-serif; //1rem = 16px
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%; // vai gerar 14px
+  }
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%; // vai gerar 14px
+  }
+}
+
+.btnCadastrar {
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--preto);
+  background: var(--green-300);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--green-300);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--green-300);
+  }
+}
+
+.btnExcluir {
+  margin-top: 1rem;
+  height: 3.8rem;
+  width: 40%;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  color: var(--preto);
+  background: var(--red-400);
+  cursor: pointer;
+  box-shadow: 0px 5px 40px -20px var(--red-400);
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    svg {
+      animation: animate 2s infinite;
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+    background: var(--red-400);
+  }
+}
+
+.grupoBotao {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
