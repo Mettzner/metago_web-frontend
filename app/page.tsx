@@ -37,33 +37,36 @@ const Home = () => {
 
   return (
     <>
-      <div className="">
+      <div className="flex justify-center items-center h-screen">
         <form onSubmit={handleLogin}>
-          <div className=''>
-            <div className=''>
-              <h1 className=''>Image</h1>
+          <div className='flex gap-2'>
+            <div className='w-1/2 min-w-1/2 bg-cyan-800 text-black'>
+              <h1 className='flex justify-center items-center'>Image</h1>
             </div>
-            <div className=''>
-              <h1 className=''>Login</h1>
-              <Input
-                placeholder="Usuário"
-                type="text"
-                value={USUARIO}
-                onChange={(e) => setUsuario(e.target.value)}
-              />
+            <div className='w-1/2 min-w-1/2'>
+              <h1 className='flex justify-center items-center'>Login</h1>
+              <div className='grid gap-2'>
+                <Input
+                  placeholder="Usuário"
+                  type="text"
+                  value={USUARIO}
+                  onChange={(e) => setUsuario(e.target.value)}
+                />
 
-              <Input
-                type="password"
-                placeholder="Senha"
-                value={SENHA}
-                onChange={(e) => setSenha(e.target.value)}
-              />
+                <Input
+                  type="password"
+                  placeholder="Senha"
+                  value={SENHA}
+                  onChange={(e) => setSenha(e.target.value)}
+                />
 
-              <Button
-                type="submit"
-              >
-                Acessar
-              </Button>
+                <Button
+                  className='bg-cyan-800 w-full text-cyan-50 hover:bg-cyan-700 rounded'
+                  type="submit"
+                >
+                  Acessar
+                </Button>
+              </div>
             </div>
           </div>
         </form>

@@ -37,6 +37,40 @@
 }
 
 @layer base {
+  .light {
+    --background: #f9f8ff;
+    --foreground: #333;
+
+    --card: #fff;
+    --card-foreground: #333;
+
+    --popover: #fff;
+    --popover-foreground: #333;
+
+    --primary: #e63946;
+    --primary-foreground: #fff;
+
+    --secondary: #f9d86c;
+    --secondary-foreground: #333;
+
+    --muted: #f1f1f1;
+    --muted-foreground: #878787;
+
+    --accent: #90caf9;
+    --accent-foreground: #333;
+
+    --destructive: #f48fb1;
+    --destructive-foreground: #fff;
+
+    --border: #f1f1f1;
+    --input: #fff;
+    --ring: #f1f1f1;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
   * {
     @apply border-border;
   }

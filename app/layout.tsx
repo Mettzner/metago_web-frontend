@@ -20,12 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} light`}>
         <AuthProvider>
-          <ThemeProvider>
-            <main>{children}</main>
-            <ToastContainer autoClose={3000} />
-          </ThemeProvider>
+          {/* <ThemeProvider> */}
+          {children}
+          <ToastContainer autoClose={3000} />
+          {/* </ThemeProvider> */}
         </AuthProvider>
       </body>
     </html>
