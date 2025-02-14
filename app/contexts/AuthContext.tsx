@@ -38,7 +38,7 @@ type AuthProviderProps = {
 export const AuthContext = createContext({} as AuthContextData);
 
 export function signOut() {
-//   const router = useRouter();
+  //   const router = useRouter();
   try {
     destroyCookie(undefined, "@nextauth.token");
     // router.push("/");
